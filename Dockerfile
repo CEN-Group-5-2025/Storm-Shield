@@ -18,10 +18,11 @@ RUN python -m venv /py && \
     apt-get install -y --no-install-recommends libpq-dev gcc g++ postgresql
 
 COPY ./requirements.txt /tmp/requirements.txt
+COPY ./requirements.prod.txt /tmp/requirements.prod.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 
 # Install pip requirements
-RUN /py/bin/pip install -r /tmp/requirements.txt && \
+RUN /py/bin/pip install -r /tmp/requirements.txt && /py/bin/pip install -r /tmp/requirements.prod.txt && \
     if [ $DEV = "true" ]; \
         then /py/bin/pip install -r /tmp/requirements.dev.txt ; \
     fi && \

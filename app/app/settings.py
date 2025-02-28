@@ -198,13 +198,6 @@ AWS_QUERYSTRING_AUTH = False
 # == Auth & Session Config == #
 ###############################
 
-# Allows handling csrf and session cookies in external requests
-CSRF_COOKIE_SAMESITE = "Lax"
-SESSION_COOKIE_SAMESITE = "Lax"
-
-# Prevent csrf and session cookies from being set by JS
-CSRF_COOKIE_HTTPONLY = False
-SESSION_COOKIE_HTTPONLY = False
 
 # Only allow cookies from these origins
 CSRF_TRUSTED_ORIGINS = environ_list("CSRF_TRUSTED_ORIGINS")
@@ -219,17 +212,6 @@ CORS_ALLOWED_ORIGINS = CSRF_TRUSTED_ORIGINS
 CORS_EXPOSE_HEADERS = ["Content-Type", "X-CSRFToken"]
 CORS_ALLOW_CREDENTIALS = True
 
-
-if DEBUG:
-    CSRF_TRUSTED_ORIGINS.extend(["http://0.0.0.0"])
-    INSTALLED_APPS.append("debug_toolbar")
-    INSTALLED_APPS.append("django_browser_reload")
-    MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
-    MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
-    INTERNAL_IPS = [
-        "127.0.0.1",
-    ]
-    CORS_ORIGIN_ALLOW_ALL = True
 
 ###############################
 # == Environment Overrides == #
