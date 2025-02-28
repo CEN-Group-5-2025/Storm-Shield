@@ -1,0 +1,51 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - DEV=true
+    container_name: stormshield-debug-app
+    command: >
+      sh -c "pip install debugpy -t /tmp &&
+             python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py init_superuser &&
+             python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+      - 5678:5678
+    volumes:
+      - ./app:/app
+    environment:
+      - DJANGO_ENV=dev
+      - DB_HOST=stormshield-debug-db
+      - DB_NAME=devdb
+      - DB_USER=devuser
+      - DB_PASS=devpass
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=*
+      - CSRF_TRUSTED_ORIGINS=http://localhost:8000
+      
+      - S3_STORAGE_BACKEND=0
+      - AWS_EXECUTION_ENV=0
+      
+      - CREATE_SUPERUSER=1
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL:-admin@example.com}
+      - DJANGO_SUPERUSER_PASS=${DJANGO_SUPERUSER_PASS:-changeme}
+
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13-alpine
+    container_name: stormshield-debug-db
+    volumes:
+      - postgres-stormshield-debug:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=devdb
+      - POSTGRES_USER=devuser
+      - POSTGRES_PASSWORD=devpass
+
+volumes:
+  postgres-stormshield-debug:

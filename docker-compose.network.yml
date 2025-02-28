@@ -1,0 +1,60 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        - DEV=true
+    container_name: stormshield-network-app
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./app:/app
+      - static-stormshield-network:/vol/static
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py init_superuser &&
+             entrypoint.sh"
+
+    environment:
+      - DJANGO_ENV=network
+      - DB_HOST=stormshield-network-db
+      - DB_NAME=devdatabase
+      - DB_USER=devuser
+      - DB_PASS=devpass
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=*
+      - CSRF_TRUSTED_ORIGINS=http://localhost:8000
+      
+      - S3_STORAGE_BACKEND=0
+      - AWS_EXECUTION_ENV=0
+      
+      - CREATE_SUPERUSER=1
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL:-admin@example.com}
+      - DJANGO_SUPERUSER_PASS=${DJANGO_SUPERUSER_PASS:-changeme}
+    depends_on:
+      - postgres
+    networks:
+      - cluster
+
+  postgres:
+    image: postgres:13-alpine
+    container_name: stormshield-network-db
+    volumes:
+      - postgres-stormshield-network:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=devdatabase
+      - POSTGRES_USER=devuser
+      - POSTGRES_PASSWORD=devpass
+    networks:
+      - cluster
+
+volumes:
+  postgres-stormshield-network:
+
+# Connect to external network
+networks:
+  cluster:
+    # name: example_cluster
+    # external: true

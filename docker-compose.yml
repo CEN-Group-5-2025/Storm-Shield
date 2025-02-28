@@ -1,0 +1,58 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        - DEV=true
+    container_name: stormshield-dev-app
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./app:/app
+      - static-stormshield-dev:/vol/static
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py init_superuser &&
+             python manage.py runserver 0.0.0.0:8000"
+
+    environment:
+      - DJANGO_ENV=dev
+      - DB_HOST=stormshield-dev-db
+      - DB_NAME=devdatabase
+      - DB_USER=devuser
+      - DB_PASS=devpass
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=*
+      - CSRF_TRUSTED_ORIGINS=http://localhost:8000
+      
+      - S3_STORAGE_BACKEND=0
+      - AWS_EXECUTION_ENV=0
+      
+      - CREATE_SUPERUSER=1
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL:-admin@example.com}
+      - DJANGO_SUPERUSER_PASS=${DJANGO_SUPERUSER_PASS:-changeme}
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13-alpine
+    container_name: stormshield-dev-db
+    volumes:
+      - postgres-stormshield-dev:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=devdatabase
+      - POSTGRES_USER=devuser
+      - POSTGRES_PASSWORD=devpass
+
+  coverage:
+    image: nginx
+    ports:
+      - '8001:80'
+    volumes:
+      - ./app/htmlcov:/usr/share/nginx/html
+
+volumes:
+  postgres-stormshield-dev:
+  static-stormshield-dev:
