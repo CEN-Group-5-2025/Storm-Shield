@@ -93,7 +93,6 @@ If you have Taskfile installed, you can use the following:
 | ----------------------------- | --------------------------------------------- |
 | `task setup`                  | Runs basic setup for repo dev                 |
 | `task dev`                    | Start dev server                              |
-| `task network`                | Starts the server in "network" mode           |
 | `task test`                   | Run unit tests                                |
 | `task makemigrations`         | Create database migration files               |
 | `task makemigrations:dry-run` | Run makemigrations but don't create files     |
