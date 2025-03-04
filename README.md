@@ -105,7 +105,7 @@ If you have Taskfile installed, you can use the following:
 
 ### Admin Dashboard
 
-You can log into the admin dashboard by going to the route `/admin` and using the following credentials:
+You can log into the admin dashboard by going to <http://localhost:8000/admin/> and using the following credentials:
 
 - Username: `admin@example.com`
 - Password: `changeme`
@@ -117,7 +117,7 @@ DJANGO_SUPERUSER_EMAIL="admin@example.com"
 DJANGO_SUPERUSER_PASS="changeme"
 ```
 
-If you want to change these values, copy the sample.env file to a new `.env` file and change the values. If you already created an admin with the other credentials, then another one won't be created automatically. To get another one to be created automatically, remove the database and restart the app with this command:
+If you want to change these values, you can do so in the `.env` file created during setup. If you already created an admin user with the other credentials, then another one won't be created automatically. To get another one to be created automatically, remove the database and restart the app with this command:
 
 ```sh
 docker-compose down --remove-orphans -v
