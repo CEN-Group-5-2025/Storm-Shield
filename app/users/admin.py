@@ -11,7 +11,7 @@ from users.models import User
 class UserAdmin(BaseUserAdmin):
     """Manager users in admin dashbaord."""
 
-    readonly_fields = BaseUserAdmin.readonly_fields + ("date_joined", "date_modified")
+    readonly_fields = BaseUserAdmin.readonly_fields + ("date_joined", "date_modified", "username")
     ordering = ("email",)
 
 
