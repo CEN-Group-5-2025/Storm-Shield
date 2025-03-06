@@ -1,0 +1,8 @@
+.main-menu-wrapper {
+  height: 44px;
+  width: 1280px;
+}
+
+.main-menu-wrapper .main-menu-instance {
+  width: unset !important;
+}

@@ -1,0 +1,83 @@
+.main-menu {
+  height: 44px;
+  position: relative;
+  width: 1280px;
+}
+
+.main-menu .frame {
+  align-items: center;
+  box-shadow: 0px 4px 4px #00000040;
+  display: inline-flex;
+  gap: 70px;
+  left: 407px;
+  position: absolute;
+  top: 0;
+}
+
+.main-menu .text-wrapper {
+  color: #ffffff;
+  font-family: "Rethink Sans", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.main-menu .div {
+  color: #ffffff;
+  font-family: "Rethink Sans", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  width: 104px;
+}
+
+.main-menu .volunteer {
+  color: #ffffff;
+  font-family: "Rethink Sans", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.main-menu .text-wrapper-2 {
+  color: #71c2cbe3;
+  font-family: "Rethink Sans", Helvetica;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 800;
+  left: 3px;
+  letter-spacing: 0.64px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 4px 4px #00000040;
+  top: -1px;
+}
+
+.main-menu .gg-profile {
+  height: 44px;
+  left: 1236px;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.main-menu .group {
+  height: 40px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 40px;
+}
