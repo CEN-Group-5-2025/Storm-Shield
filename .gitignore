@@ -13,10 +13,9 @@ _*
 # Custom
 _ignore/
 _ignore_*/
-_depricated/
-__depricated
 _deprecated/
 generated/
+.task/
 
 # C extensions
 *.so
