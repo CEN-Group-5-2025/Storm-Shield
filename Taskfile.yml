@@ -1,6 +1,8 @@
 # Taskfile docs: https://taskfile.dev/
 version: '3'
 
+output: 'prefixed'
+
 tasks:
   setup:
     desc: 'Run initial setup for the repo using venv'
@@ -17,10 +19,21 @@ tasks:
     run: when_changed
     cmds:
       - docker-compose build
-  dev:
+
+  dev:client:
+    desc: 'Start react app in dev mode'
+    dir: './client'
+    interactive: true
+    cmds:
+      - npm run dev
+
+  dev:server:
     desc: 'Run the servers config in dev mode'
+    aliases:
+      - dev
     deps:
       - build
+    interactive: true
     cmds:
       - docker-compose up
 

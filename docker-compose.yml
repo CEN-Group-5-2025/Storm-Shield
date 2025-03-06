@@ -9,7 +9,7 @@ services:
     ports:
       - '8000:8000'
     volumes:
-      - ./app:/app
+      - ./server:/server
       - static-stormshield-dev:/vol/static
     command: >
       sh -c "python manage.py wait_for_db &&
@@ -52,7 +52,7 @@ services:
     ports:
       - '8001:80'
     volumes:
-      - ./app/htmlcov:/usr/share/nginx/html
+      - ./server/htmlcov:/usr/share/nginx/html
 
 volumes:
   postgres-stormshield-dev:

@@ -17,6 +17,7 @@ _depricated/
 __depricated
 _deprecated/
 generated/
+.task/
 
 # C extensions
 *.so
