@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "rvest.vs-code-prettier-eslint",
+    "eamodio.gitlens",
+    "michelemelluso.code-beautifier",
+    "naumovs.color-highlight",
+    "dsznajder.es7-react-js-snippets"
+  ]
+}

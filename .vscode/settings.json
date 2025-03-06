@@ -1,9 +1,24 @@
 {
-  "editor.tabSize": 4,
+  // React/TS Settings
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "eslint.enable": true,
+  "eslint.useFlatConfig": true,
+  "editor.tabSize": 2,
+  
+  // Django/Python settings
+  "flake8.args": ["--config=app/.flake8"],
   "python.analysis.typeCheckingMode": "off",
   "python.analysis.autoImportCompletions": true,
   "python.analysis.inlayHints.callArgumentNames": "off",
-  "flake8.args": ["--config=app/.flake8"],
   "python.autoComplete.extraPaths": ["app"],
   "python.analysis.extraPaths": ["app"],
   "python.analysis.packageIndexDepths": [
@@ -16,22 +31,15 @@
       "name": "django",
       "depth": 5,
       "includeAllSymbols": true
-    },
-    {
-      "name": "sendgrid",
-      "depth": 3,
-      "includeAllSymbols": true
-    },
+    }
   ],
   "[python]": {
+    "editor.tabSize": 4,
     "editor.defaultFormatter": "ms-python.black-formatter",
-
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.unusedImports": "explicit",
       "source.fixAll": "explicit"
     }
-  },
-
-  // "flake8.ignorePatterns": ["migrations/*"]
+  }
 }
