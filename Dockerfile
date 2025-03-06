@@ -5,7 +5,7 @@ LABEL maintainer="ikehunter.com"
 # see logs immediately
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /app
+WORKDIR /server
 
 # default to production
 ARG DEV=false
@@ -30,7 +30,7 @@ RUN /py/bin/pip install -r /tmp/requirements.txt && /py/bin/pip install -r /tmp/
 
 COPY ./scripts /scripts
 
-# Create a user to run the app
+# Create a user to run the server
 RUN adduser --no-create-home --system --disabled-password --disabled-login --group django-user && \
     mkdir -p /vol/static/media && \
     mkdir -p /vol/static/static && \
@@ -42,11 +42,11 @@ RUN adduser --no-create-home --system --disabled-password --disabled-login --gro
         then mkdir /tmp && chown -R django-user:django-user /tmp ; \
     fi
 
-# Copy the app into the container
-COPY ./app /app
+# Copy the server into the container
+COPY ./server /server
 ENV PATH="/scripts:/py/bin:/usr/bin:$PATH"
 
-# Switch to the django-user and run the app
+# Switch to the django-user and run the server
 USER django-user
 VOLUME /vol/web
 CMD ["entrypoint.sh"]
