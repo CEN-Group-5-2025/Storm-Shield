@@ -46,6 +46,30 @@ services:
       - POSTGRES_DB=devdatabase
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=devpass
+      
+  pgadmin:
+    # Config adapted from: https://stackoverflow.com/a/77519799/10914922
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=changeme
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+    user: root
+    depends_on:
+      - postgres
+    entrypoint: /bin/sh -c "chmod 600 /pgpass; /entrypoint.sh;"
+    volumes:
+      - pgadmin-stormshield-dev:/var/lib/pgadmin
+    configs:
+      - source: servers.json
+        target: /pgadmin4/servers.json
+      - source: pgpass
+        target: /pgpass
+
 
   coverage:
     image: nginx
@@ -57,3 +81,26 @@ services:
 volumes:
   postgres-stormshield-dev:
   static-stormshield-dev:
+  pgadmin-stormshield-dev:
+  
+  
+configs:
+  pgpass:
+    content: postgres:5432:*:devuser:devpass
+  servers.json:
+    content: |
+      {
+        "Servers": {
+            "1": {
+                "Group": "Servers",
+                "Name": "Docker",
+                "Host": "postgres",
+                "Port": 5432,
+                "MaintenanceDB": "devdatabase",
+                "Username": "devuser",
+                "PassFile": "/pgpass",
+                "SSLMode": "prefer",
+                "Favorite": true
+            }
+        }
+      }
