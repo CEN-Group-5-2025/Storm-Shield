@@ -1,0 +1,470 @@
+[
+{
+    "model": "weather.weatherdata",
+    "pk": 1,
+    "fields": {
+        "created_at": "2025-03-07T16:18:12.793Z",
+        "updated_at": "2025-03-07T16:18:12.793Z",
+        "station_name": "ADJUNTAS SUBSTATION, US",
+        "precip_inches": 0,
+        "lat": 18.1747,
+        "long": -66.7977
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 2,
+    "fields": {
+        "created_at": "2025-03-07T16:18:50.011Z",
+        "updated_at": "2025-03-07T16:18:50.011Z",
+        "station_name": "AGUADILLA 5.5 NNE, US",
+        "precip_inches": 0,
+        "lat": 18.50834,
+        "long": -67.11241
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 3,
+    "fields": {
+        "created_at": "2025-03-07T16:19:14.221Z",
+        "updated_at": "2025-03-07T16:19:14.221Z",
+        "station_name": "AIBONITO 1 S, US",
+        "precip_inches": 0,
+        "lat": 18.128,
+        "long": -66.2641
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 4,
+    "fields": {
+        "created_at": "2025-03-07T16:19:34.697Z",
+        "updated_at": "2025-03-07T16:19:34.697Z",
+        "station_name": "CABO ROJO 1.1 ENE, US",
+        "precip_inches": 0,
+        "lat": 18.095,
+        "long": -67.134
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 5,
+    "fields": {
+        "created_at": "2025-03-07T16:20:01.181Z",
+        "updated_at": "2025-03-07T16:20:01.181Z",
+        "station_name": "CAGUAS 2.2 NNW, US",
+        "precip_inches": 0,
+        "lat": 18.26473,
+        "long": -66.050128
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 6,
+    "fields": {
+        "created_at": "2025-03-07T16:20:18.894Z",
+        "updated_at": "2025-03-07T16:20:18.894Z",
+        "station_name": "CANOVANAS 6.5 S, US",
+        "precip_inches": 0,
+        "lat": 18.2857478,
+        "long": -65.9015288
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 7,
+    "fields": {
+        "created_at": "2025-03-07T16:20:38.703Z",
+        "updated_at": "2025-03-07T16:20:38.703Z",
+        "station_name": "CAROLINA 1.7 NNW, US",
+        "precip_inches": 0,
+        "lat": 18.431143,
+        "long": -65.991773
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 8,
+    "fields": {
+        "created_at": "2025-03-07T16:20:53.596Z",
+        "updated_at": "2025-03-07T16:20:53.596Z",
+        "station_name": "COLOSO, US",
+        "precip_inches": 0,
+        "lat": 18.3808,
+        "long": -67.1569
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 9,
+    "fields": {
+        "created_at": "2025-03-07T16:21:09.691Z",
+        "updated_at": "2025-03-07T16:21:09.691Z",
+        "station_name": "DOS BOCAS, US",
+        "precip_inches": 0,
+        "lat": 18.3361,
+        "long": -66.6666
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 10,
+    "fields": {
+        "created_at": "2025-03-07T16:21:24.002Z",
+        "updated_at": "2025-03-07T16:21:24.002Z",
+        "station_name": "FAJARDO 1.1 S, US",
+        "precip_inches": 0,
+        "lat": 18.318836,
+        "long": -65.6606
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 11,
+    "fields": {
+        "created_at": "2025-03-07T16:21:38.242Z",
+        "updated_at": "2025-03-07T16:21:38.242Z",
+        "station_name": "FAJARDO, US",
+        "precip_inches": 0,
+        "lat": 18.33424,
+        "long": -65.6529
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 12,
+    "fields": {
+        "created_at": "2025-03-07T16:22:01.130Z",
+        "updated_at": "2025-03-07T16:22:01.130Z",
+        "station_name": "GUAYAMA 1 SW, US",
+        "precip_inches": 0,
+        "lat": 17.9798,
+        "long": -66.12625
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 13,
+    "fields": {
+        "created_at": "2025-03-07T16:22:42.803Z",
+        "updated_at": "2025-03-07T16:22:42.803Z",
+        "station_name": "GUAYAMA 1.1 W, US",
+        "precip_inches": 0,
+        "lat": 17.979951,
+        "long": -66.12771
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 14,
+    "fields": {
+        "created_at": "2025-03-07T16:23:01.422Z",
+        "updated_at": "2025-03-07T16:23:01.422Z",
+        "station_name": "HACIENDA CONSTANZA 2 W, US",
+        "precip_inches": 0,
+        "lat": 18.2159,
+        "long": -67.0883
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 15,
+    "fields": {
+        "created_at": "2025-03-07T16:23:17.599Z",
+        "updated_at": "2025-03-07T16:23:17.599Z",
+        "station_name": "JAJOME ALTO, US",
+        "precip_inches": 0,
+        "lat": 18.0716,
+        "long": -66.1427
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 16,
+    "fields": {
+        "created_at": "2025-03-07T16:23:39.148Z",
+        "updated_at": "2025-03-07T16:23:39.148Z",
+        "station_name": "JAYUYA 3.1 SSE, US",
+        "precip_inches": 1,
+        "lat": 18.178229,
+        "long": -66.58257
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 17,
+    "fields": {
+        "created_at": "2025-03-07T16:23:55.304Z",
+        "updated_at": "2025-03-07T16:23:55.304Z",
+        "station_name": "JUANA DIAZ 2.9 SW, US",
+        "precip_inches": 0,
+        "lat": 18.0280797,
+        "long": -66.5383357
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 18,
+    "fields": {
+        "created_at": "2025-03-07T16:24:06.858Z",
+        "updated_at": "2025-03-07T16:24:06.858Z",
+        "station_name": "JUNCOS 1 SE, US",
+        "precip_inches": 0,
+        "lat": 18.2264,
+        "long": -65.9114
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 19,
+    "fields": {
+        "created_at": "2025-03-07T16:24:57.600Z",
+        "updated_at": "2025-03-07T16:24:57.600Z",
+        "station_name": "LAJAS 2.2 E, US",
+        "precip_inches": 2,
+        "lat": 18.042388,
+        "long": -67.02762
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 20,
+    "fields": {
+        "created_at": "2025-03-07T16:25:13.199Z",
+        "updated_at": "2025-03-07T16:25:13.199Z",
+        "station_name": "LAJAS 3.3 SSE, US",
+        "precip_inches": 0,
+        "lat": 18.002207,
+        "long": -67.04284
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 21,
+    "fields": {
+        "created_at": "2025-03-07T16:27:56.397Z",
+        "updated_at": "2025-03-07T16:27:56.397Z",
+        "station_name": "LARES 1.6 SSW, US",
+        "precip_inches": 0,
+        "lat": 18.273292,
+        "long": -66.888018
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 22,
+    "fields": {
+        "created_at": "2025-03-07T16:28:29.749Z",
+        "updated_at": "2025-03-07T16:28:29.749Z",
+        "station_name": "LARES 2.0 NNE, US",
+        "precip_inches": 0,
+        "lat": 18.32253,
+        "long": -66.86929
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 23,
+    "fields": {
+        "created_at": "2025-03-07T16:28:51.449Z",
+        "updated_at": "2025-03-07T16:28:51.449Z",
+        "station_name": "LAS MARIAS 9.6 ESE, US",
+        "precip_inches": 0,
+        "lat": 18.256317,
+        "long": -67.003463
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 24,
+    "fields": {
+        "created_at": "2025-03-07T16:29:03.028Z",
+        "updated_at": "2025-03-07T16:29:03.028Z",
+        "station_name": "LAS PIEDRAS 1.9 WNW, US",
+        "precip_inches": 0,
+        "lat": 18.1897641,
+        "long": -65.89809111
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 25,
+    "fields": {
+        "created_at": "2025-03-07T16:29:17.347Z",
+        "updated_at": "2025-03-07T16:29:17.347Z",
+        "station_name": "LEVITTOWN 1.0 SE, US",
+        "precip_inches": 0,
+        "lat": 18.4356,
+        "long": -66.1678
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 26,
+    "fields": {
+        "created_at": "2025-03-07T16:29:29.423Z",
+        "updated_at": "2025-03-07T16:29:29.423Z",
+        "station_name": "MANATI 1.0 S, US",
+        "precip_inches": 0,
+        "lat": 18.416471,
+        "long": -66.48686
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 27,
+    "fields": {
+        "created_at": "2025-03-07T16:30:04.892Z",
+        "updated_at": "2025-03-07T16:30:04.892Z",
+        "station_name": "MAYAGUEZ ARRIBA, US",
+        "precip_inches": 0,
+        "lat": 18.21704,
+        "long": -67.116726
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 28,
+    "fields": {
+        "created_at": "2025-03-07T16:30:18.111Z",
+        "updated_at": "2025-03-07T16:30:18.111Z",
+        "station_name": "PONCE 3.1 NW, US",
+        "precip_inches": 0,
+        "lat": 18.0158,
+        "long": -66.6452
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 29,
+    "fields": {
+        "created_at": "2025-03-07T16:30:35.892Z",
+        "updated_at": "2025-03-07T16:30:35.892Z",
+        "station_name": "PONCE 3.5 W, US",
+        "precip_inches": 0,
+        "lat": 17.992265,
+        "long": -66.66207
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 30,
+    "fields": {
+        "created_at": "2025-03-07T16:30:50.705Z",
+        "updated_at": "2025-03-07T16:30:50.705Z",
+        "station_name": "PONCE 4 E, US",
+        "precip_inches": 0,
+        "lat": 18.0258,
+        "long": -66.5252
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 31,
+    "fields": {
+        "created_at": "2025-03-07T16:31:03.748Z",
+        "updated_at": "2025-03-07T16:31:03.748Z",
+        "station_name": "PONCE 5.0 NNW, US",
+        "precip_inches": 1,
+        "lat": 18.047447,
+        "long": -66.651432
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 32,
+    "fields": {
+        "created_at": "2025-03-07T16:31:16.574Z",
+        "updated_at": "2025-03-07T16:31:16.574Z",
+        "station_name": "RINCON 1.5 N, US",
+        "precip_inches": 0,
+        "lat": 18.362668,
+        "long": -67.249747
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 33,
+    "fields": {
+        "created_at": "2025-03-07T16:31:32.856Z",
+        "updated_at": "2025-03-07T16:31:32.856Z",
+        "station_name": "RINCON 2.8 SE, US",
+        "precip_inches": 0,
+        "lat": 18.3188,
+        "long": -67.2178
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 34,
+    "fields": {
+        "created_at": "2025-03-07T16:31:53.032Z",
+        "updated_at": "2025-03-07T16:31:53.032Z",
+        "station_name": "SAN JUAN 7.1 S, US",
+        "precip_inches": 0,
+        "lat": 18.3062054,
+        "long": -66.0794585
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 35,
+    "fields": {
+        "created_at": "2025-03-07T16:32:23.103Z",
+        "updated_at": "2025-03-07T16:32:23.103Z",
+        "station_name": "TOA ALTA 2.7 SSW, US",
+        "precip_inches": 0,
+        "lat": 18.355621,
+        "long": -66.268247
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 36,
+    "fields": {
+        "created_at": "2025-03-07T16:32:41.833Z",
+        "updated_at": "2025-03-07T16:32:41.833Z",
+        "station_name": "TOA BAJA LEVITTOWN, US",
+        "precip_inches": 0,
+        "lat": 18.4356,
+        "long": -66.1678
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 37,
+    "fields": {
+        "created_at": "2025-03-07T16:32:55.774Z",
+        "updated_at": "2025-03-07T16:32:55.774Z",
+        "station_name": "VEGA BAJA 2.8 N, US",
+        "precip_inches": 0,
+        "lat": 18.483283,
+        "long": -66.398289
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 38,
+    "fields": {
+        "created_at": "2025-03-07T16:33:23.849Z",
+        "updated_at": "2025-03-07T16:33:23.849Z",
+        "station_name": "VILLALBA 1.5 SSW, US",
+        "precip_inches": 0,
+        "lat": 18.11202,
+        "long": -66.49432
+    }
+},
+{
+    "model": "weather.weatherdata",
+    "pk": 39,
+    "fields": {
+        "created_at": "2025-03-07T16:33:36.253Z",
+        "updated_at": "2025-03-07T16:33:36.253Z",
+        "station_name": "YAUCO 0.8 SSW, US",
+        "precip_inches": 1,
+        "lat": 18.026,
+        "long": -66.865
+    }
+}
+]

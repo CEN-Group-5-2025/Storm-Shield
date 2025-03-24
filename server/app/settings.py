@@ -63,9 +63,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "drf_spectacular",
     "rest_framework",
+    'rest_framework.authtoken',
     "corsheaders",
     "core",
     "users",
+    "weather",
 ]
 
 MIDDLEWARE = [
