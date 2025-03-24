@@ -1,4 +1,3 @@
-import React from "react";
 import "./profile-icon.css";
 
 export const ProfileIcon = () => {

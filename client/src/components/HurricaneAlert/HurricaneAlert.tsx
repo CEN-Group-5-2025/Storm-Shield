@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./HurricaneAlert.module.css";
 import WarningIcon from "./WarningIcon";
 

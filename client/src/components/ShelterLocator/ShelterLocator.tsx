@@ -1,4 +1,3 @@
-import React from "react";
 import HouseIcon from "./HouseIcon";
 import styles from "./ShelterLocator.module.css";
 

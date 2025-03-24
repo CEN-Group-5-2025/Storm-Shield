@@ -1,4 +1,3 @@
-import React from "react";
 import "./hero-content.css";
 
 export function HeroContent() {

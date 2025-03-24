@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../../components/Footer/Footer";
 import { HeroSection } from "../../components/HeroSection";
 import HurricaneAlert from "../../components/HurricaneAlert/HurricaneAlert";

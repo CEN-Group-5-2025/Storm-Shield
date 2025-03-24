@@ -1,4 +1,3 @@
-import React from "react";
 import { HeroBackground } from "./HeroBackground";
 import { HeroContent } from "./HeroContent";
 import "./hero-section.css";

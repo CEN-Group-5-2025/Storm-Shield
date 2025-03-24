@@ -1,7 +1,6 @@
-import React from "react";
 import { Logo } from "./Logo";
-import { NavLinks } from "./NavLinks";
-import { ProfileIcon } from "./ProfileIcon";
+import { NavLinks } from "./NavLinks.tsx";
+import { ProfileIcon } from "./ProfileIcon.tsx";
 import "./navigation-bar.css";
 
 export const NavigationBar = () => {

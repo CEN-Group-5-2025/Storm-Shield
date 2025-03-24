@@ -1,4 +1,3 @@
-import React from "react";
 import stormBackground from "../../assets/storm-background.jpeg";
 import "./hero-background.css";
 

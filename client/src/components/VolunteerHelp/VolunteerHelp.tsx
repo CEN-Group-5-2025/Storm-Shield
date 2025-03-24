@@ -1,6 +1,5 @@
-import React from "react";
 import styles from "./VolunteerHelp.module.css";
-import VolunteerIcon from "./VolunteerIcon";
+import VolunteerIcon from "./VolunteerIcon.tsx";
 
 const VolunteerHelp = () => {
   return (
