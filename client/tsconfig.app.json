@@ -29,6 +29,11 @@
     
     /* Testing */
     "types": ["vitest/globals"],
+    
+    /* Development */
+    "paths": {
+      "src/*": ["./src/*"]
+    },
   },
   "include": ["src"]
 }
