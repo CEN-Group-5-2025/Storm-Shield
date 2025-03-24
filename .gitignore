@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 _*
 !__init__.py
+.task/
 
 # VSCode
 # .vscode/
