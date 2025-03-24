@@ -1,1 +1,0 @@
-export { MainMenuWrapper } from "./MainMenuWrapper";
