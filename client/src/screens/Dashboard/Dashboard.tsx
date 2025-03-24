@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import liveUpdatesImage from "../../assets/LIVE UPDATES.svg";
 import Footer from "../../components/Footer/Footer";
 import { NavigationBar } from "../../components/NavigationBar";
-import RedDotIndicator from "../../components/RedDotIndicator";
 import "./dashboard.css";
 
 // Alert type icons
@@ -95,6 +93,7 @@ const additionalUpdates = [
 export const Dashboard = () => {
   const [updates, setUpdates] = useState(initialWeatherUpdates);
   const [showAllUpdates, setShowAllUpdates] = useState(false);
+  const [animateHeader, setAnimateHeader] = useState(true);
 
   // Simulate real-time updates
   useEffect(() => {
@@ -145,11 +144,11 @@ export const Dashboard = () => {
       <div className="dashboard-content">
         <NavigationBar />
         <div className="dashboard-main">
-          <div className="dashboard-title-container">
-            <img src={liveUpdatesImage} alt="LIVE UPDATES" className="dashboard-title-image" />
-            <div className="red-dot-wrapper">
-              <RedDotIndicator />
-            </div>
+          <div className={`dashboard-header ${animateHeader ? 'animate' : ''}`}>
+            <h1 className="page-title">
+              Live Updates
+              <span className="live-indicator"></span>
+            </h1>
           </div>
 
           <div className="update-rectangles">
@@ -167,7 +166,7 @@ export const Dashboard = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="more-updates">
             <button className="more-updates-button" onClick={loadMoreUpdates}>
               {showAllUpdates ? "Show Less Updates" : "Show More Updates"}

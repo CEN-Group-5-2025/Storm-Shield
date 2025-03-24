@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import communityUpdatesImage from "../../assets/COMMUNITY UPDATES.svg";
 import Footer from "../../components/Footer/Footer";
 import { NavigationBar } from "../../components/NavigationBar";
 import "./community.css";
@@ -169,9 +168,9 @@ export const Community = () => {
       <div className="community-content">
         <NavigationBar />
 
-        <div className="community-main">
+        <main className="community-main">
           <div className={`community-header ${animateHeader ? 'animate' : ''}`}>
-            <img src={communityUpdatesImage} alt="COMMUNITY UPDATES" className="community-title-image" />
+            <h1 className="page-title">Community Updates</h1>
           </div>
 
           <div className="community-stats">
@@ -277,7 +276,7 @@ export const Community = () => {
               </div>
             ))}
           </div>
-        </div>
+        </main>
 
         <Footer />
       </div>

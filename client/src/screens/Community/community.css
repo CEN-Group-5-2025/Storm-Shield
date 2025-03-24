@@ -64,11 +64,10 @@
 
 .community-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   margin-top: 40px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  background: none;
+  box-shadow: none;
 }
 
 .community-header.animate {
@@ -78,7 +77,8 @@
 
 .community-title-image {
   height: 45px;
-  filter: drop-shadow(0 0 10px rgba(113, 194, 203, 0.4));
+  background: none;
+  box-shadow: none;
 }
 
 .community-stats {
