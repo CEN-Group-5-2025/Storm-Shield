@@ -12,6 +12,8 @@ class ModelSerializerBase(serializers.ModelSerializer):
 
     created_at = serializers.DateTimeField(format=datetime_format, read_only=True, required=False, allow_null=True)
     updated_at = serializers.DateTimeField(format=datetime_format, read_only=True, required=False, allow_null=True)
+    
+    default_fields = ["id", "created_at", "updated_at"]
 
     class Meta:
         read_only_fields = ["id", "created_at", "updated_at"]

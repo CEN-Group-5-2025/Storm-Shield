@@ -58,7 +58,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(auto_now_add=True, editable=False, blank=True)
     date_modified = models.DateTimeField(auto_now=True, editable=False, blank=True)
 
-    username = None
+    # username = None
     objects: ClassVar[UserManager] = UserManager()
 
     USERNAME_FIELD = "email"
@@ -66,6 +66,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def name(self):
         return f"{self.first_name} {self.last_name}".strip()
+
+    @property
+    def username(self):
+        return self.email
 
     def __str__(self):
         return self.name if self.name != "" else self.email

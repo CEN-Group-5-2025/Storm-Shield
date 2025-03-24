@@ -8,7 +8,11 @@ StormShield is an emergency weather web application designed to aid **Puerto Ric
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Running Dev Server](#running-dev-server)
+    - [Run Server](#run-server)
+    - [Run Client](#run-client)
   - [Unit tests](#unit-tests)
+    - [Server Tests](#server-tests)
+    - [Client Tests](#client-tests)
   - [Taskfile Commands](#taskfile-commands)
   - [Admin Dashboard](#admin-dashboard)
 - [Features](#features)
@@ -60,7 +64,9 @@ Alternatively, you can use Conda to manage python packages instead of venv. This
 
 ### Running Dev Server
 
-> Taskfile command: `task dev`
+#### Run Server
+
+> Taskfile command: `task dev:server`
 
 Build and start server
 
@@ -75,9 +81,28 @@ After first build, you can just run:
 docker-compose up
 ```
 
+#### Run Client
+
+> Taskfile command: `task dev:client`
+
+Install npm packages:
+
+```sh
+cd client
+npm install
+```
+
+Then, start Vite server:
+
+```sh
+npm run dev
+```
+
 ### Unit tests
 
-> Taskfile command: `task test`
+#### Server Tests
+
+> Taskfile command: `task test:server`
 
 To run unit tests using django's test suite:
 
@@ -85,23 +110,40 @@ To run unit tests using django's test suite:
 docker-compose run --rm app sh -c "python manage.py test"
 ```
 
+#### Client Tests
+
+> Taskfile command: `task test:client`
+
+To run vitest tests in the client:
+
+```sh
+cd client
+npm run test
+```
+
 ### Taskfile Commands
 
-If you have Taskfile installed, you can use the following:
+If you have Taskfile installed, you can use the following commands. Note: some commands are flagged with `:server` and `:client` to notate the command should be run for Django or React respectively. The client commands are automatically scoped to the _client/_ directory, so no need to `cd` into it.
 
 | Command                       | Purpose                                       |
 | ----------------------------- | --------------------------------------------- |
 | `task setup`                  | Runs basic setup for repo dev                 |
-| `task dev`                    | Start dev server                              |
-| `task test`                   | Run unit tests                                |
+| `task dev:server`             | Start django dev server                       |
+| `task test:server`            | Run unit tests for Django                     |
 | `task makemigrations`         | Create database migration files               |
 | `task makemigrations:dry-run` | Run makemigrations but don't create files     |
 | `task migrate`                | Apply migration files to the database         |
-| `task lint`                   | Check code lint rules with Flake8             |
-| `task format`                 | Check but don't apply formatting rules        |
-| `task format:fix`             | Format codebase using Black                   |
+| `task lint:server`            | Check python lint rules with Flake8           |
+| `task format:server`          | Check but don't apply python formatting rules |
+| `task format:fix:server`      | Format python using Black                     |
 | `task down`                   | Stops all running docker containers           |
 | `task down:clean`             | Stops and removes containers, removes volumes |
+| `task npm-install`            | Runs `npm install` in the client directory    |
+| `task dev:client`             | Starts the react app in dev mode              |
+| `task test:client`            | Run unit tests for React                      |
+| `task lint:client`            | Check TS lint rules with Eslint               |
+| `task format:client`          | Check but don't apply TS formatting rules     |
+| `task format:fix:client`      | Format TS using Prettier                      |
 
 ### Admin Dashboard
 

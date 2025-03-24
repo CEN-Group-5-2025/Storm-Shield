@@ -27,16 +27,21 @@ from drf_spectacular.views import (
 
 from app.settings import DEBUG
 
+apipatterns = [
+    path("schema/", SpectacularAPIView.as_view(), name="api-schema"),
+    path(
+        "docs/",
+        SpectacularSwaggerView.as_view(url_name="api-schema"),
+        name="api-docs",
+    ),
+    path("user/", include("users.apis")),
+]
+
 urlpatterns = [
     path("", include("core.urls")),
     path("admin/", admin.site.urls),
     path("api/docs/", RedirectView.as_view(url="/api/v1/docs/"), name="api-docs-base"),
-    path("api/v1/schema/club-manager", SpectacularAPIView.as_view(), name="api-schema"),
-    path(
-        "api/v1/docs/",
-        SpectacularSwaggerView.as_view(url_name="api-schema"),
-        name="api-docs",
-    ),
+    path("api/v1/", include(apipatterns)),
 ]
 
 handler404 = "core.views.custom404"
