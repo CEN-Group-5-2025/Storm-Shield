@@ -2,16 +2,33 @@ import Footer from "../../components/Footer/Footer";
 import { HeroSection } from "../../components/HeroSection";
 import HurricaneAlert from "../../components/HurricaneAlert/HurricaneAlert";
 import { NavigationBar } from "../../components/NavigationBar";
+import { ScrollIndicator } from "../../components/ScrollIndicator/ScrollIndicator";
 import ShelterLocator from "../../components/ShelterLocator/ShelterLocator";
 import VolunteerHelp from "../../components/VolunteerHelp/VolunteerHelp";
 import "./style.css";
 
 export const LandingPage = () => {
+  const scrollToContent = () => {
+    const landingButtons = document.querySelector('.landing-buttons');
+    if (landingButtons) {
+      landingButtons.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="landing-page">
       <div className="div-2">
         <NavigationBar />
         <HeroSection />
+        <div onClick={scrollToContent}>
+          <ScrollIndicator />
+        </div>
+
+        <div className="landing-buttons">
+          <HurricaneAlert />
+          <ShelterLocator />
+          <VolunteerHelp />
+        </div>
 
         <div className="landing-info-wrapper">
           <div className="landing-info">
@@ -44,12 +61,6 @@ export const LandingPage = () => {
               </p>
             </div>
           </div>
-        </div>
-
-        <div className="landing-buttons">
-          <HurricaneAlert />
-          <ShelterLocator />
-          <VolunteerHelp />
         </div>
       </div>
       <Footer />

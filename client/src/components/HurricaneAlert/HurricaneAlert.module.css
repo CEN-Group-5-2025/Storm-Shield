@@ -9,6 +9,9 @@
   width: 413px;
   height: 622px;
   padding: 65px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (width<=991px) {
@@ -28,6 +31,9 @@
   justify-content: center;
   margin-bottom: 30px;
   display: flex;
+  height: 155px;
+  display: flex;
+  align-items: center;
 }
 
 .alertTitle {
@@ -36,6 +42,10 @@
   font-size: 30px;
   font-style: italic;
   font-weight: 800;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .alertDescription {
@@ -44,4 +54,7 @@
   font-size: 24px;
   font-weight: 800;
   line-height: 35px;
+  height: 98px;
+  width: 316px;
+  max-width: 100%;
 }
