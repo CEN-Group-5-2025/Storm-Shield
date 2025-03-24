@@ -148,3 +148,8 @@ tasks:
     desc: 'Stops and removes all docker containers, removes volumes'
     cmds:
       - docker-compose down --remove-orphans -v
+
+  load-data:
+    desc: 'Loads in data'
+    cmds:
+      - docker-compose run --rm app sh -c "python manage.py loaddata fixtures/weatherdata.json"
