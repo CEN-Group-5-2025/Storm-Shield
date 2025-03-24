@@ -166,3 +166,22 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+
+# Dependencies
+node_modules/
+.package-lock.json
+
+# Build outputs
+dist/
+build/
+*.pyc
+__pycache__/
+.venv/
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
