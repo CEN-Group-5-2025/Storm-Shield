@@ -2,9 +2,8 @@
 Serializers for the user API View
 """
 
-from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth import authenticate, get_user_model
 from django.utils.translation import gettext as _  # convention import name
-
 from rest_framework import serializers
 
 
@@ -13,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ["email", "password", "first_name", "last_name"]
+        fields = ["id", "email", "password", "first_name", "last_name", "created_at", "updated_at"]
         extra_kwargs = {"password": {"write_only": True, "min_length": 5}}
 
     # override default create method to call custom create_user method

@@ -5,10 +5,9 @@ export const UserTokenSchema: z.ZodSchema<{ token: string }> = z.object({
   token: z.string(),
 })
 
-export const UserDetailsSchema: z.ZodSchema = z.object({
+export const UserDetailsSchema: z.ZodSchema<IUser> = z.object({
   ...ModelSchemaBase,
   email: z.string(),
-  username: z.string(),
   first_name: z
     .string()
     .nullish()

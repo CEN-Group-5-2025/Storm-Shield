@@ -35,7 +35,7 @@ export type NetworkResponse<T> =
 export class NetworkBase {
   protected endpoints = NetworkEndpoints
   private _token: string | null = null
-  private tokenFactory = localDataFactory<string>('clubportal-token')
+  private tokenFactory = localDataFactory<string>('stormshield-token')
 
   constructor() {
     this._token = this.tokenFactory.get()
@@ -72,15 +72,17 @@ export class NetworkBase {
    * Sends a request to the server which returns a user
    * token. This token will be sent with each api request.
    */
-  public async loginWithUsername(usernameOrEmail: string, password: string) {
+  public async loginWithEmail(email: string, password: string) {
     const url = this.endpoints.user.login
 
     const res = await this.request(url, UserTokenSchema, {
       method: 'POST',
-      data: { username: usernameOrEmail, password },
+      data: { email, password },
       isPublic: true,
       mock: { data: { token: 'test-token' } },
     })
+
+    console.log('res:', res)
 
     if (!res.success) return res
     this.setToken(res.data.token)
