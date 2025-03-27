@@ -40,8 +40,8 @@ apipatterns = [
 urlpatterns = [
     path("", include("core.urls")),
     path("admin/", admin.site.urls),
-    path("api/docs/", RedirectView.as_view(url="/api/v1/docs/"), name="api-docs-base"),
-    path("api/v1/", include(apipatterns)),
+    # path("api/docs/", RedirectView.as_view(url="/api/v1/docs/"), name="api-docs-base"),
+    path("api/", include(apipatterns)),
 ]
 
 handler404 = "core.views.custom404"

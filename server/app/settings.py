@@ -228,7 +228,7 @@ if DEV:
 
     MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
     MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
-    CSRF_TRUSTED_ORIGINS.extend(["http://0.0.0.0"])
+    CSRF_TRUSTED_ORIGINS.extend(["http://0.0.0.0", "http://localhost:3000"])
 
     INTERNAL_IPS = [
         "127.0.0.1",
