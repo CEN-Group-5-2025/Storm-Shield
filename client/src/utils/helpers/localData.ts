@@ -11,7 +11,7 @@ export const localDataFactory = <T>(key: string) => ({
   get: (): T | null => {
     const data = localStorage.getItem(key)
 
-    if (data) {
+    if (data && data.length > 0) {
       return JSON.parse(data)
     } else {
       return null

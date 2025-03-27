@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "network": "vite --mode network",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
