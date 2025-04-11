@@ -157,7 +157,7 @@ tasks:
     cmds:
       - docker-compose down --remove-orphans -v
 
-  load-data:
+  loaddata:
     desc: 'Loads in data'
     cmds:
       - docker-compose run --rm app sh -c "python manage.py loaddata fixtures/weatherdata.json"
