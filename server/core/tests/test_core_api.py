@@ -4,6 +4,7 @@ General and core api tests.
 
 from django.urls import reverse
 from rest_framework import status
+
 from core.abstracts.tests import ApiTestsBase
 
 

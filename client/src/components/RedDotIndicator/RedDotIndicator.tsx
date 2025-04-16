@@ -60,7 +60,7 @@ const RedDotIndicator = () => {
         </radialGradient>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default RedDotIndicator; 
+export default RedDotIndicator

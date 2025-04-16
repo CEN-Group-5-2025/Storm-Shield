@@ -1,12 +1,12 @@
-import { HeroBackground } from "./HeroBackground";
-import { HeroContent } from "./HeroContent";
-import "./hero-section.css";
+import { HeroBackground } from './HeroBackground'
+import { HeroContent } from './HeroContent'
+import './hero-section.css'
 
-export function HeroSection() {
+export const HeroSection = () => {
   return (
     <section className="hero-section">
       <HeroBackground />
       <HeroContent />
     </section>
-  );
-} 
+  )
+}

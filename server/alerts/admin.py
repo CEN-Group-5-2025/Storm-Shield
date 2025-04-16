@@ -1,6 +1,7 @@
+from django.contrib import admin
+
 from alerts.models import Alert
 from core.abstracts.admin import ModelAdminBase
-from django.contrib import admin
 
 
 class AlertAdmin(ModelAdminBase):

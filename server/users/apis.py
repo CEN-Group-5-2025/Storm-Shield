@@ -3,6 +3,7 @@ URL Patterns for users REST API.
 """
 
 from django.urls import path
+
 from users import views
 
 app_name = "api-users"

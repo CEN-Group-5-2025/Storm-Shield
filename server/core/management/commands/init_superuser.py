@@ -1,6 +1,7 @@
 import os
-from django.core.management import BaseCommand
+
 from django.contrib.auth import get_user_model
+from django.core.management import BaseCommand
 
 
 class Command(BaseCommand):
@@ -10,11 +11,7 @@ class Command(BaseCommand):
         """Entrypoint for command"""
 
         if not bool(int(os.environ.get("DEBUG", 0))):
-            self.stdout.write(
-                self.style.ERROR(
-                    "Unable to automate super user creation when not in DEBUG mode."
-                )
-            )
+            self.stdout.write(self.style.ERROR("Unable to automate super user creation when not in DEBUG mode."))
 
             return
 
@@ -26,8 +23,4 @@ class Command(BaseCommand):
             password = os.environ.get("DJANGO_SUPERUSER_PASS")
             User.objects.create_superuser(email=email, password=password)
 
-            self.stdout.write(
-                self.style.SUCCESS(
-                    f"Created super user with email {email} and password {password}."
-                )
-            )
+            self.stdout.write(self.style.SUCCESS(f"Created super user with email {email} and password {password}."))

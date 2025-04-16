@@ -1,4 +1,4 @@
-import "./scroll-indicator.css";
+import './scroll-indicator.css'
 
 export const ScrollIndicator = () => {
   return (
@@ -6,5 +6,5 @@ export const ScrollIndicator = () => {
       <div className="scroll-text">Scroll Down</div>
       <div className="scroll-arrow"></div>
     </div>
-  );
-}; 
+  )
+}

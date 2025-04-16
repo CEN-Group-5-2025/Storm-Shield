@@ -1,7 +1,7 @@
-import stormBackground from "../../assets/storm-background.jpeg";
-import "./hero-background.css";
+import stormBackground from '../../assets/storm-background.jpeg'
+import './hero-background.css'
 
-export function HeroBackground() {
+export const HeroBackground = () => {
   return (
     <>
       <img
@@ -11,5 +11,5 @@ export function HeroBackground() {
       />
       <div className="hero-overlay"></div>
     </>
-  );
-} 
+  )
+}

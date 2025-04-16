@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     "core",
     "users",
     "weather",
-    "shelters", 
+    "shelters",
     "alerts",
 ]
 

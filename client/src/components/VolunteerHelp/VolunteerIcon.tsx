@@ -8,7 +8,7 @@ const VolunteerIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="volunteer-icon"
       style={{
-        filter: "drop-shadow(0px 4px 4px rgba(0,0,0,0.25))",
+        filter: 'drop-shadow(0px 4px 4px rgba(0,0,0,0.25))',
       }}
     >
       <g filter="url(#filter0_d_18_8)">
@@ -56,7 +56,7 @@ const VolunteerIcon = () => {
         </filter>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default VolunteerIcon; 
+export default VolunteerIcon

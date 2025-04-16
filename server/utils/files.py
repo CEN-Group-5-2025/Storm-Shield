@@ -2,9 +2,9 @@
 File management utilities.
 """
 
+import uuid
 from pathlib import Path
 from typing import Optional
-import uuid
 
 from app.settings import MEDIA_ROOT
 
@@ -39,9 +39,7 @@ def get_media_path(
     if filename:
         path = Path(path, filename)
     elif fileprefix:
-        assert (
-            fileext is not None
-        ), "If using a file prefix, a file extension must also be provided."
+        assert fileext is not None, "If using a file prefix, a file extension must also be provided."
         assert not fileext.startswith("."), "File extension must not start with a dot."
 
         filename = f"{fileprefix}-{uuid.uuid4()}.{fileext}"

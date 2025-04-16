@@ -1,4 +1,3 @@
-
 const HouseIcon = () => {
   return (
     <svg
@@ -9,7 +8,7 @@ const HouseIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="house-icon"
       style={{
-        filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+        filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
       }}
     >
       <g filter="url(#filter0_d_18_4)">
@@ -57,7 +56,7 @@ const HouseIcon = () => {
         </filter>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default HouseIcon; 
+export default HouseIcon

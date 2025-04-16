@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import { NavigationBar } from "../../components/NavigationBar";
-import "./volunteer-matching.css";
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Footer from '../../components/Footer/Footer'
+import { NavigationBar } from '../../components/NavigationBar'
+import './volunteer-matching.css'
 
 export const VolunteerMatching = () => {
-  const [animateHeader, setAnimateHeader] = useState(false);
-  const navigate = useNavigate();
+  const [animateHeader, setAnimateHeader] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     // Animate header on load
     setTimeout(() => {
-      setAnimateHeader(true);
-    }, 300);
-  }, []);
+      setAnimateHeader(true)
+    }, 300)
+  }, [])
 
   const handleVolunteerButtonClick = () => {
-    navigate('/volunteer-form');
-  };
+    navigate('/volunteer-form')
+  }
 
   const handleRequestAssistanceClick = () => {
-    navigate('/volunteer-request');
-  };
+    navigate('/volunteer-request')
+  }
 
   return (
     <div className="volunteer-page">
@@ -32,8 +32,9 @@ export const VolunteerMatching = () => {
           <div className={`volunteer-header ${animateHeader ? 'animate' : ''}`}>
             <h1 className="page-title">Volunteer Matching</h1>
             <p className="volunteer-subtitle">
-              Connect with those who need help or offer your assistance during and after
-              disaster events. StormShield helps match volunteers with people in need.
+              Connect with those who need help or offer your assistance during
+              and after disaster events. StormShield helps match volunteers with
+              people in need.
             </p>
           </div>
 
@@ -41,19 +42,31 @@ export const VolunteerMatching = () => {
             <div className="volunteer-option">
               <h2 className="option-title">Find a Volunteer</h2>
               <p className="option-description">
-                Need assistance with evacuation, supplies, shelter, or other emergency needs?
-                Request help from our community of verified volunteers.
+                Need assistance with evacuation, supplies, shelter, or other
+                emergency needs? Request help from our community of verified
+                volunteers.
               </p>
-              <button className="option-button" onClick={handleRequestAssistanceClick}>Request Assistance</button>
+              <button
+                className="option-button"
+                onClick={handleRequestAssistanceClick}
+              >
+                Request Assistance
+              </button>
             </div>
 
             <div className="volunteer-option">
               <h2 className="option-title">Become a Volunteer</h2>
               <p className="option-description">
-                Have skills, resources, or time to help others during emergency situations?
-                Register as a volunteer to be matched with those in need.
+                Have skills, resources, or time to help others during emergency
+                situations? Register as a volunteer to be matched with those in
+                need.
               </p>
-              <button className="option-button" onClick={handleVolunteerButtonClick}>Register as Volunteer</button>
+              <button
+                className="option-button"
+                onClick={handleVolunteerButtonClick}
+              >
+                Register as Volunteer
+              </button>
             </div>
           </div>
         </main>
@@ -61,5 +74,5 @@ export const VolunteerMatching = () => {
         <Footer />
       </div>
     </div>
-  );
-}; 
+  )
+}

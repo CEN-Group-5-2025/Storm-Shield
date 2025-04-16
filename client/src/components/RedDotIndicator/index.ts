@@ -1,1 +1,1 @@
-export { default } from './RedDotIndicator';
+export { default } from './RedDotIndicator'
