@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     "core",
     "users",
     "weather",
+    "shelters"
 ]
 
 MIDDLEWARE = [
