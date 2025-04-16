@@ -160,4 +160,4 @@ tasks:
   loaddata:
     desc: 'Loads in data'
     cmds:
-      - docker-compose run --rm app sh -c "python manage.py loaddata fixtures/weatherdata.json"
+      - docker-compose run --rm app sh -c "python manage.py loaddata fixtures/*"

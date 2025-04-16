@@ -31,7 +31,7 @@ jobs:
 
       - name: Check Linting
         run: |
-          task lint
+          task lint:server
 
   black-formatting:
     runs-on: ubuntu-latest
@@ -57,13 +57,19 @@ jobs:
 
       - name: Check Formatting
         run: |
-          task format
+          task format:server
 
   eslint-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Node.js Setup
         uses: actions/setup-node@v3
@@ -72,7 +78,7 @@ jobs:
         run: npm ci
 
       - name: Run Eslint
-        run: npm run lint
+        run: task lint:client
 
   prettier-check:
     runs-on: ubuntu-latest
@@ -80,11 +86,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Node.js Setup
         uses: actions/setup-node@v3
 
-      - name: Install Packages
-        run: npm ci
-
       - name: Run Prettier
-        run: npm run format
+        run: task format:client
