@@ -2,15 +2,12 @@
 User Models.
 """
 
+from datetime import datetime
 from typing import ClassVar
-from django.db import models
-from django.contrib.auth.models import (
-    AbstractBaseUser,
-    BaseUserManager,
-    PermissionsMixin,
-)
 
 from core.abstracts.models import ManagerBase
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.db import models
 
 
 class UserManager(BaseUserManager, ManagerBase["User"]):
@@ -70,6 +67,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def username(self):
         return self.email
+
+    @property
+    def created_at(self) -> datetime:
+        return self.date_joined
+
+    @property
+    def updated_at(self) -> datetime:
+        return self.date_modified
 
     def __str__(self):
         return self.name if self.name != "" else self.email

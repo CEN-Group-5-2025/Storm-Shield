@@ -1,0 +1,167 @@
+[
+  {
+    "model": "alerts.alert",
+    "pk": 1,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Mr",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+      "alert_type": "weather"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 2,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Dr",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+      "alert_type": "medical"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 3,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Mrs",
+      "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+      "alert_type": "shelter"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 4,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Honorable",
+      "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+      "alert_type": "weather"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 5,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Dr",
+      "description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+      "alert_type": "service"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 6,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Rev",
+      "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+      "alert_type": "service"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 7,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Dr",
+      "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+      "alert_type": "service"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 8,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Mr",
+      "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+      "alert_type": "weather"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 9,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Rev",
+      "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+      "alert_type": "shelter"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 10,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Rev",
+      "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+      "alert_type": "service"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 11,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Ms",
+      "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+      "alert_type": "road"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 12,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Mr",
+      "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+      "alert_type": "flood"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 13,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Mrs",
+      "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+      "alert_type": "medical"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 14,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Dr",
+      "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+      "alert_type": "flood"
+    }
+  },
+  {
+    "model": "alerts.alert",
+    "pk": 15,
+    "fields": {
+      "created_at": "2025-04-14T00:00:00Z",
+      "updated_at": "2025-04-14T00:00:00Z",
+      "title": "Ms",
+      "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+      "alert_type": "road"
+    }
+  }
+]
