@@ -6,8 +6,9 @@ Author: https://stackoverflow.com/users/1513933/laurent-laporte
 
 import functools
 import inspect
-from typing import TypeVar
 import warnings
+from typing import TypeVar
+
 from typing_extensions import deprecated as deprecated_type
 
 string_types = (type(b""), type(""))

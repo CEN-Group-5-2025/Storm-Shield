@@ -30,8 +30,8 @@ export const Logout = () => {
             <h1 className="logout-title">Logging Out</h1>
             <p className="logout-text">
               {isLoggingOut
-                ? "You are being logged out of your account..."
-                : "You have been successfully logged out. Redirecting to home page..."}
+                ? 'You are being logged out of your account...'
+                : 'You have been successfully logged out. Redirecting to home page...'}
             </p>
             <div className="logout-spinner"></div>
           </div>
@@ -41,4 +41,4 @@ export const Logout = () => {
       </div>
     </div>
   )
-} 
+}

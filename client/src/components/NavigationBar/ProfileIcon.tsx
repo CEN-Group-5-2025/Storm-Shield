@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import "./profile-icon.css";
+import { Link } from 'react-router-dom'
+import './profile-icon.css'
 
 export const ProfileIcon = () => {
   // In a real app, you would check if the user is logged in
   // For now, we'll assume the user is not logged in
-  const isLoggedIn = false;
+  const isLoggedIn = false
 
   return (
     <div className="profile-icon-wrapper">
@@ -52,5 +52,5 @@ export const ProfileIcon = () => {
         </Link>
       )}
     </div>
-  );
-}; 
+  )
+}

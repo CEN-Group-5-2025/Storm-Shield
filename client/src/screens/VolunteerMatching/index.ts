@@ -1,1 +1,1 @@
-export { VolunteerMatching } from './VolunteerMatching';
+export { VolunteerMatching } from './VolunteerMatching'

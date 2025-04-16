@@ -1,5 +1,5 @@
-import HouseIcon from "./HouseIcon";
-import styles from "./ShelterLocator.module.css";
+import HouseIcon from './HouseIcon'
+import styles from './ShelterLocator.module.css'
 
 const ShelterLocator = () => {
   return (
@@ -12,7 +12,7 @@ const ShelterLocator = () => {
         Find safe shelter locations near you during emergencies
       </p>
     </section>
-  );
-};
+  )
+}
 
-export default ShelterLocator; 
+export default ShelterLocator

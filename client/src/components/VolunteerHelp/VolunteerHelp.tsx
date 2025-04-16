@@ -1,5 +1,5 @@
-import styles from "./VolunteerHelp.module.css";
-import VolunteerIcon from "./VolunteerIcon.tsx";
+import styles from './VolunteerHelp.module.css'
+import VolunteerIcon from './VolunteerIcon.tsx'
 
 const VolunteerHelp = () => {
   return (
@@ -12,7 +12,7 @@ const VolunteerHelp = () => {
         Sign up to be a volunteer or to be matched with volunteers
       </p>
     </section>
-  );
-};
+  )
+}
 
-export default VolunteerHelp; 
+export default VolunteerHelp

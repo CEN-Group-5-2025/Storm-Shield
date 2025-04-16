@@ -1,7 +1,7 @@
 import logging
 import traceback
-
 from collections.abc import Iterable
+
 from django.utils.module_loading import import_string
 
 from app.settings import TESTING

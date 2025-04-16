@@ -115,7 +115,7 @@ tasks:
   format:fix:server:
     desc: 'Format code using Black'
     cmds:
-      - docker-compose run --rm app sh -c "black . && autoflake --in-place --remove-all-unused-imports --remove-unused-variables --quiet --recursive --exclude "migrations" . && isort ."
+      - docker-compose run --rm app sh -c "until black --check . && autoflake --in-place --remove-all-unused-imports --remove-unused-variables --check --quiet --recursive --exclude 'migrations' . && isort --check .; do black . && autoflake --in-place --remove-all-unused-imports --remove-unused-variables --quiet --recursive --exclude 'migrations' . && isort .; done"
 
   test:server:
     desc: 'Run unit tests'

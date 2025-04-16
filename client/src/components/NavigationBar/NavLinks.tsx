@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
-import "./nav-links.css";
+import { Link } from 'react-router-dom'
+import './nav-links.css'
 
 export const NavLinks = () => {
   const navItems = [
-    { name: "Dashboard", path: "/dashboard" },
-    { name: "Shelter Locator", path: "/shelter-locator" },
-    { name: "Community", path: "/community" },
-    { name: "Volunteer Matching", path: "/volunteer" },
-  ];
+    { name: 'Dashboard', path: '/dashboard' },
+    { name: 'Shelter Locator', path: '/shelter-locator' },
+    { name: 'Community', path: '/community' },
+    { name: 'Volunteer Matching', path: '/volunteer' },
+  ]
 
   return (
     <nav className="nav-links">
@@ -22,5 +22,5 @@ export const NavLinks = () => {
         </Link>
       ))}
     </nav>
-  );
-}; 
+  )
+}

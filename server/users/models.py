@@ -5,9 +5,14 @@ User Models.
 from datetime import datetime
 from typing import ClassVar
 
-from core.abstracts.models import ManagerBase
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import (
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
+)
 from django.db import models
+
+from core.abstracts.models import ManagerBase
 
 
 class UserManager(BaseUserManager, ManagerBase["User"]):
