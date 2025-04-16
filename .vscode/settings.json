@@ -15,12 +15,12 @@
   "editor.tabSize": 2,
   
   // Django/Python settings
-  "flake8.args": ["--config=app/.flake8"],
+  "flake8.args": ["--config=server/.flake8"],
   "python.analysis.typeCheckingMode": "off",
   "python.analysis.autoImportCompletions": true,
   "python.analysis.inlayHints.callArgumentNames": "off",
-  "python.autoComplete.extraPaths": ["app"],
-  "python.analysis.extraPaths": ["app"],
+  "python.autoComplete.extraPaths": ["server"],
+  "python.analysis.extraPaths": ["server"],
   "python.analysis.packageIndexDepths": [
     {
       "name": "rest_framework",
