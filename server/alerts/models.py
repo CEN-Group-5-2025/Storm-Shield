@@ -20,3 +20,6 @@ class Alert(ModelBase):
     title = models.CharField(max_length=128)
     description = models.TextField()
     alert_type = models.CharField(choices=AlertType.choices, default=AlertType.WEATHER)
+
+    def __str__(self):
+        return self.title
