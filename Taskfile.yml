@@ -24,6 +24,22 @@ tasks:
     cmds:
       - npm run dev
 
+  network:client:
+    desc: 'Start react app in network mode'
+    dir: './client'
+    deps:
+      - npm-install:client
+    cmds:
+      - npm run network
+
+  test:client:
+    desc: 'Run vitest for React'
+    dir: './client'
+    deps:
+      - npm-install:client
+    cmds:
+      - npm run test
+
   lint:client:
     desc: 'Lint typescript using eslint'
     dir: './client'
@@ -55,14 +71,6 @@ tasks:
       - npm-install:client
     cmds:
       - npm run format:fix
-
-  test:client:
-    desc: 'Run vitest for React'
-    dir: './client'
-    deps:
-      - npm-install:client
-    cmds:
-      - npm run test
 
   ############################################
   # Server Commands
@@ -149,7 +157,7 @@ tasks:
     cmds:
       - docker-compose down --remove-orphans -v
 
-  load-data:
+  loaddata:
     desc: 'Loads in data'
     cmds:
-      - docker-compose run --rm app sh -c "python manage.py loaddata fixtures/weatherdata.json"
+      - docker-compose run --rm app sh -c "python manage.py loaddata fixtures/*"

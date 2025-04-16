@@ -1,0 +1,151 @@
+.logout-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #011f27;
+  overflow-x: hidden;
+}
+
+.logout-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/dashboard-image.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 1;
+  animation: slowZoom 30s infinite alternate;
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.logout-page::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #011F27 0%, rgba(2, 68, 78, 0.80) 63.5%, #011F27 100%);
+  z-index: 2;
+}
+
+.logout-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logout-main {
+  flex: 1;
+  padding: 120px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logout-message {
+  text-align: center;
+  background: rgba(2, 68, 78, 0.7);
+  border-radius: 10px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(113, 194, 203, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease;
+  max-width: 500px;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logout-title {
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Rethink Sans";
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.logout-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.logout-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(113, 194, 203, 0.3);
+  border-radius: 50%;
+  border-top-color: #71C2CB;
+  animation: spin 1s ease-in-out infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .logout-main {
+    padding: 100px 20px 40px;
+  }
+
+  .logout-title {
+    font-size: 30px;
+  }
+
+  .logout-message {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logout-main {
+    padding: 90px 15px 30px;
+  }
+
+  .logout-title {
+    font-size: 26px;
+  }
+
+  .logout-message {
+    padding: 25px;
+  }
+}
