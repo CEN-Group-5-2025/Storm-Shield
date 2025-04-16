@@ -74,8 +74,6 @@ jobs:
       - name: Node.js Setup
         uses: actions/setup-node@v3
 
-      - name: Install Packages
-        run: npm ci
 
       - name: Run Eslint
         run: task lint:client
