@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Network } from 'src/network'
 import Footer from '../../components/Footer/Footer'
 import { NavigationBar } from '../../components/NavigationBar'
 import './login.css'
@@ -12,6 +13,12 @@ export const Login = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [animateHeader, setAnimateHeader] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const networkRef = useRef(Network.getInstance())
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    networkRef.current = Network.getInstance()
+  }, [])
 
   useEffect(() => {
     // Animate header on load
@@ -53,7 +60,7 @@ export const Login = () => {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!validateForm()) {
@@ -61,23 +68,18 @@ export const Login = () => {
     }
 
     setIsLoading(true)
+    const res = await networkRef.current.loginWithEmail(
+      formData.email,
+      formData.password,
+    )
+    setIsLoading(false)
 
-    // Simulate API call
-    setTimeout(() => {
-      // In a real app, you would send the data to your backend here
-      console.log('Login data:', formData)
-
-      // Reset form and loading state
-      setFormData({
-        email: '',
-        password: '',
-      })
-      setIsLoading(false)
-
-      // Redirect to dashboard or show success message
-      // In a real app, you would use navigate from react-router-dom
-      // navigate("/dashboard");
-    }, 1500)
+    // TODO: Handle auth errors
+    if (res.success) {
+      navigate('/dashboard')
+    } else {
+      console.warn('Unable to log in:', res.data)
+    }
   }
 
   return (

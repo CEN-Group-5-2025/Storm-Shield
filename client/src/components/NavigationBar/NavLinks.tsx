@@ -4,9 +4,9 @@ import './nav-links.css'
 export const NavLinks = () => {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard' },
-    { name: 'Shelter Locator', path: '/shelter-locator' },
-    { name: 'Community', path: '/community' },
-    { name: 'Volunteer Matching', path: '/volunteer' },
+    { name: 'Shelter Locator', path: '/dashboard/shelter-locator' },
+    { name: 'Community', path: '/dashboard/community' },
+    { name: 'Volunteer Matching', path: '/dashboard/volunteer' },
   ]
 
   return (
