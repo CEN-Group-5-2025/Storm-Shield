@@ -1,15 +1,18 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from 'src/context'
 import './profile-icon.css'
 
 export const ProfileIcon = () => {
   // In a real app, you would check if the user is logged in
   // For now, we'll assume the user is not logged in
-  const isLoggedIn = false
+  // const isLoggedIn = false
+  const { isAuthenticated: isLoggedIn } = useContext(AuthContext)
 
   return (
     <div className="profile-icon-wrapper">
       {isLoggedIn ? (
-        <Link to="/profile">
+        <Link to="/dashboard/profile">
           <svg
             width="40"
             height="40"
