@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import './App.css'
+import { DashboardOutlet } from './components/DashboardOutlet'
 import { AuthProvider } from './context'
 import { Community } from './screens/Community/Community'
 import { Dashboard } from './screens/Dashboard'
@@ -24,15 +25,25 @@ export const App = () => {
           path="/dashboard"
           element={
             <AuthProvider>
+              <DashboardOutlet />
+            </AuthProvider>
+          }
+        >
+          <Route index={true} element={<Dashboard />} />
+          <Route path="community" element={<Community />} />
+          <Route path="shelter-locator" element={<ShelterLocatorPage />} />
+          <Route path="volunteer" element={<VolunteerMatching />} />
+          <Route path="volunteer-form" element={<VolunteerForm />} />
+          <Route path="volunteer-request" element={<VolunteerRequest />} />
+        </Route>
+        {/* <Route
+          path="/dashboard"
+          element={
+            <AuthProvider>
               <Dashboard />
             </AuthProvider>
           }
-        />
-        <Route path="/community" element={<Community />} />
-        <Route path="/shelter-locator" element={<ShelterLocatorPage />} />
-        <Route path="/volunteer" element={<VolunteerMatching />} />
-        <Route path="/volunteer-form" element={<VolunteerForm />} />
-        <Route path="/volunteer-request" element={<VolunteerRequest />} />
+        /> */}
       </Routes>
     </Router>
   )

@@ -31,13 +31,12 @@ apipatterns = [
         name="api-docs",
     ),
     path("user/", include("users.apis")),
-    path("alerts/", include("alerts.urls")),
+    path("alert/", include("alerts.urls")),
 ]
 
 urlpatterns = [
     path("", include("core.urls")),
     path("admin/", admin.site.urls),
-    # path("api/docs/", RedirectView.as_view(url="/api/v1/docs/"), name="api-docs-base"),
     path("api/", include(apipatterns)),
 ]
 

@@ -6,4 +6,8 @@ export const NetworkEndpoints = Object.freeze({
     login: `${API_URL}/user/token/`,
     info: `${API_URL}/user/me/`,
   },
+  alerts: {
+    list: `${API_URL}/alert/alerts/`,
+    detail: (id: number) => `${API_URL}/alert/alerts/${id}/`,
+  },
 })

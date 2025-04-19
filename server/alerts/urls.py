@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from . import views
 
 router = DefaultRouter()
-router.register("alert", views.AlertViewSet, basename="alert")
+router.register("alerts", views.AlertViewSet, basename="alert")
 
 app_name = "alerts"
 
