@@ -5,13 +5,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "STRATFORD HOSPITAL DISTRICT D/B/A VALLEY VIEW CARE CENTER",
-      "addy": "79 2nd Plaza",
-      "city": "Ban Ko Lan",
+      "name": "Esc. José Emilio Lugo",
+      "addy": "579H+C7H",
+      "city": "Los Cerros",
       "capacity": 43,
       "occupancy": 120,
-      "lat": 13.75639,
-      "long": 100.5073712,
+      "lat": 18.168541,
+      "long": -66.721870,
       "amenities": "Medical"
     }
   },
@@ -21,13 +21,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "RIVEREDGE HOSPITAL, INC.",
-      "addy": "171 Meadow Vale Court",
-      "city": "Liangting",
+      "name": "Esc. Rafael Aparicio Jiménez",
+      "addy": "578G+W4",
+      "city": "Adjuntas",
       "capacity": 0,
       "occupancy": 95,
-      "lat": 30.543283,
-      "long": 117.062623,
+      "lat": 18.167167, 
+      "long": -66.724914,
       "amenities": "Shower"
     }
   },
@@ -37,13 +37,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "RINCON MEDICAL CENTER",
-      "addy": "5 Glendale Circle",
-      "city": "Ampanihy",
+      "name": "Esc. Eladio Tirado López",
+      "addy": "9R9V+QH8",
+      "city": "Aguada",
       "capacity": 12,
       "occupancy": 141,
-      "lat": -24.6930487,
-      "long": 44.7451765,
+      "lat": 18.369306, 
+      "long": -67.156249,
       "amenities": "Electricity"
     }
   },
@@ -53,13 +53,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "THE MILTON S HERSHEY MEDICAL CENTER PHYSICIANS GROUP",
-      "addy": "583 Glendale Center",
-      "city": "Changjiang",
+      "name": "Esc Intermedia Prof. Juana Rosario",
+      "addy": "9RG8+G28",
+      "city": "Aguada",
       "capacity": 248,
       "occupancy": 7,
-      "lat": 30.5211502,
-      "long": 112.8915932,
+      "lat": 18.376372,
+      "long": -67.185029,
       "amenities": "Water"
     }
   },
@@ -69,13 +69,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "SPARROW IONIA HOSPITAL",
-      "addy": "4085 Troy Drive",
-      "city": "Kodra",
+      "name": "Esc. S.U. Epifanio Estrada",
+      "addy": "9R62+J4",
+      "city": "Aguada",
       "capacity": 290,
       "occupancy": 191,
-      "lat": 50.5602346,
-      "long": 29.5970439,
+      "lat": 18.361433,
+      "long": -67.199657,
       "amenities": "Other"
     }
   },
@@ -85,13 +85,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "CAMERON HOSPITAL INC",
-      "addy": "22 Jenifer Center",
-      "city": "Unidad",
+      "name": "Esc. Benito Cerezo Vázquez",
+      "addy": "FR5W+82",
+      "city": "Aguadilla",
       "capacity": 253,
       "occupancy": 107,
-      "lat": 14.556369,
-      "long": 121.1375395,
+      "lat": 18.458315,
+      "long": -67.155006,
       "amenities": "Shower"
     }
   },
@@ -101,13 +101,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "M&V SAN JOSE MEDICAL CENTER LLC",
-      "addy": "4 Loeprich Place",
-      "city": "Qingkenpao",
+      "name": "Esc. Sup. Juan Suárez Pelegrina",
+      "addy": "FWP2+MXF",
+      "city": "Aguadilla",
       "capacity": 41,
       "occupancy": 37,
-      "lat": 46.409427,
-      "long": 125.4464411,
+      "lat": 18.486648, 
+      "long": -67.097553,
       "amenities": "Food"
     }
   },
@@ -117,13 +117,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "TYLER COUNTY HOSPITAL DISTRICT",
-      "addy": "20196 Dexter Street",
-      "city": "Qinghe",
+      "name": "Esc. Conchita Igartua de Suarez",
+      "addy": "CVVM+84R",
+      "city": "Aguadilla",
       "capacity": 10,
       "occupancy": 132,
-      "lat": 37.039991,
-      "long": 115.667208,
+      "lat": 18.443312, 
+      "long": -67.117084,
       "amenities": "Other"
     }
   },
@@ -133,13 +133,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "PUNGO DISTRICT HOSPITAL CORPORATION",
-      "addy": "49 Heath Drive",
-      "city": "Chengbei",
+      "name": "Esc. Superior Urbana",
+      "addy": "XPF9+6FM",
+      "city": "Salinas",
       "capacity": 206,
       "occupancy": 107,
-      "lat": 36.650038,
-      "long": 101.766228,
+      "lat": 17.972928,
+      "long": -66.281283,
       "amenities": "Shower"
     }
   },
@@ -149,13 +149,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "TOWNE LAKE REHAB & MEDICAL CENTER LLC",
-      "addy": "6 Hintze Lane",
-      "city": "Santa Cruz",
+      "name": "Esc. Superior Dr. José N. Gándara",
+      "addy": "4PMP+9JM",
+      "city": "Aibonito",
       "capacity": 148,
       "occupancy": 69,
-      "lat": 19.6938888,
-      "long": -99.2591666,
+      "lat": 18.133419, 
+      "long": -66.263424,
       "amenities": "Water"
     }
   },
@@ -165,13 +165,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "HOSPITAL AUTHORITY OF MITCHELL COUNTY",
-      "addy": "521 Dakota Terrace",
-      "city": "Soledad",
+      "name": "Esc Federico Degetau",
+      "addy": "296J+QP Ponce, Puerto Rico",
+      "city": "Ponce",
       "capacity": 236,
       "occupancy": 19,
-      "lat": 8.1707969,
-      "long": -63.5658573,
+      "lat": 18.011868, 
+      "long": -66.618276,
       "amenities": "Other"
     }
   },
@@ -181,13 +181,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "F&M RADIOLOGY MEDICAL CENTER INC",
-      "addy": "3 Dwight Street",
-      "city": "Mežica",
+      "name": "Esc. Isabel Suárez",
+      "addy": "7VJ7+J6P",
+      "city": "Añasco",
       "capacity": 116,
       "occupancy": 187,
-      "lat": 46.5214145,
-      "long": 14.8523952,
+      "lat": 18.281528, 
+      "long": -67.136977,
       "amenities": "Medical"
     }
   },
@@ -197,13 +197,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "JORDAN HOSPITAL ANESTHESIA ASSOCIATES, PC",
-      "addy": "420 West Crossing",
-      "city": "Baoshan",
+      "name": "Esc. Carmen Casasús Martí",
+      "addy": "7VP9+P5P",
+      "city": "Añasco",
       "capacity": 138,
       "occupancy": 170,
-      "lat": 25.112046,
-      "long": 99.161761,
+      "lat": 18.286834, 
+      "long": -67.131895,
       "amenities": "Water"
     }
   },
@@ -213,13 +213,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "NORTH BROWARD HOSPITAL DISTRICT",
-      "addy": "46503 Elka Junction",
-      "city": "Jiangfang",
+      "name": "Esc. Luis Muñoz",
+      "addy": "PR-402",
+      "city": "Añasco",
       "capacity": 10,
       "occupancy": 16,
-      "lat": 27.372513,
-      "long": 117.731346,
+      "lat": 18.294649, 
+      "long": -67.139158,
       "amenities": "Medical"
     }
   },
@@ -229,13 +229,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "NAVAL HOSPITAL YOKOSUKA",
-      "addy": "05972 Menomonie Center",
-      "city": "Ash Shajarah",
+      "name": "Esc. María Cadilla de Martínez",
+      "addy": "C6RR+8R3",
+      "city": "Arecibo",
       "capacity": 162,
       "occupancy": 2,
-      "lat": 32.6434902,
-      "long": 35.9396453,
+      "lat": 18.440553,
+      "long": -66.757838,
       "amenities": "Other"
     }
   },
@@ -245,13 +245,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "DUNDY COUNTY HOSPITAL",
-      "addy": "95 Aberg Hill",
-      "city": "Salor",
+      "name": "Centro Comunal Antonio Marquez Arbona",
+      "addy": "C6QW+FH5",
+      "city": "Arecibo",
       "capacity": 81,
       "occupancy": 75,
-      "lat": 41.37222,
-      "long": 69.38167,
+      "lat": 18.438593, 
+      "long": -66.753652,
       "amenities": "Food"
     }
   },
@@ -261,13 +261,13 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
-      "name": "BANNER MESA MEDICAL CENTER",
-      "addy": "37 Jana Alley",
-      "city": "Rixi",
+      "name": "Esc. Elemental Vicente Acevedo Ballester",
+      "addy": "CCCF+595",
+      "city": "Búfalo",
       "capacity": 23,
       "occupancy": 199,
-      "lat": 28.856082,
-      "long": 93.388853,
+      "lat": 18.420376, 
+      "long": -66.576585,
       "amenities": "Medical"
     }
   }
