@@ -1,4 +1,4 @@
-import { UserDetailsSchema } from 'src/schemas'
+import { ShelterListSchema, UserDetailsSchema } from 'src/schemas'
 import { AlertListSchema } from 'src/schemas/alert'
 import { mockUser } from 'src/utils'
 import { NetworkBase } from './NetworkBase'
@@ -41,5 +41,14 @@ export class Network extends NetworkBase {
     const url = this.endpoints.alerts.list
 
     return await this.request(url, AlertListSchema)
+  }
+
+  /**
+   * Fetch shelters.
+   */
+  public async getShelters() {
+    const url = this.endpoints.shelters.list
+
+    return await this.request(url, ShelterListSchema)
   }
 }
