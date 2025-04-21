@@ -1,5 +1,4 @@
 from django.db import models
-
 from core.abstracts.models import ModelBase
 
 
