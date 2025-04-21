@@ -1,4 +1,3 @@
-
 const WarningIcon = () => {
   return (
     <svg
@@ -9,9 +8,9 @@ const WarningIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="warning-icon"
       style={{
-        width: "135px",
-        height: "135px",
-        filter: "drop-shadow(0px 4px 4px rgba(0,0,0,0.25))",
+        width: '135px',
+        height: '135px',
+        filter: 'drop-shadow(0px 4px 4px rgba(0,0,0,0.25))',
       }}
     >
       <g filter="url(#filter0_d_18_6)">
@@ -59,7 +58,7 @@ const WarningIcon = () => {
         </filter>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default WarningIcon; 
+export default WarningIcon

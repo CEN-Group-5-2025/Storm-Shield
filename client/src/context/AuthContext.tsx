@@ -7,15 +7,19 @@ import {
 } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Network } from 'src/network'
+import type { IAlert } from 'src/schemas'
 
 export const AuthContext = createContext({
   user: null as IUser | null,
   isAuthenticated: null as boolean | null,
+  alerts: [] as IAlert[],
 })
 
 export const AuthProvider = (props: { children?: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
   const [user, setUser] = useState<IUser | null>(null)
+  const [alerts, setAlerts] = useState<IAlert[]>([])
+
   const networkRef = useRef(Network.getInstance())
   const navigate = useNavigate()
 
@@ -30,9 +34,16 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
    * user store.
    */
   const initializeStores = async () => {
-    const res = await networkRef.current.getCurrentUser()
-    if (res.success) {
-      setUser(res.data)
+    /* Get current user */
+    const userRes = await networkRef.current.getCurrentUser()
+    if (userRes.success) {
+      setUser(userRes.data)
+    }
+
+    /* Get alerts */
+    const alertsRes = await networkRef.current.getAlerts()
+    if (alertsRes.success) {
+      setAlerts(alertsRes.data)
     }
   }
 
@@ -63,7 +74,7 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
   }, [user])
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, alerts }}>
       {props.children}
     </AuthContext.Provider>
   )

@@ -1,4 +1,5 @@
 import { UserDetailsSchema } from 'src/schemas'
+import { AlertListSchema } from 'src/schemas/alert'
 import { mockUser } from 'src/utils'
 import { NetworkBase } from './NetworkBase'
 
@@ -21,7 +22,7 @@ export class Network extends NetworkBase {
     return this.instance
   }
 
-  /*=== Club & User Routes ================================*/
+  /*=== API Routes ================================*/
   /**
    * Fetch details for logged in user.
    */
@@ -31,5 +32,14 @@ export class Network extends NetworkBase {
     return await this.request(url, UserDetailsSchema, {
       mock: { data: mockUser },
     })
+  }
+
+  /**
+   * Fetch alerts.
+   */
+  public async getAlerts() {
+    const url = this.endpoints.alerts.list
+
+    return await this.request(url, AlertListSchema)
   }
 }

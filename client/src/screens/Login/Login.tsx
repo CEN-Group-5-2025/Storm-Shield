@@ -1,84 +1,86 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import { NavigationBar } from "../../components/NavigationBar";
-import "./login.css";
+import { useEffect, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Network } from 'src/network'
+import Footer from '../../components/Footer/Footer'
+import { NavigationBar } from '../../components/NavigationBar'
+import './login.css'
 
 export const Login = () => {
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const [animateHeader, setAnimateHeader] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+    email: '',
+    password: '',
+  })
+  const [isLoading, setIsLoading] = useState(false)
+  const [animateHeader, setAnimateHeader] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const networkRef = useRef(Network.getInstance())
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    networkRef.current = Network.getInstance()
+  }, [])
 
   useEffect(() => {
     // Animate header on load
     setTimeout(() => {
-      setAnimateHeader(true);
-    }, 300);
-  }, []);
+      setAnimateHeader(true)
+    }, 300)
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value,
-    });
+    })
 
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors({
         ...errors,
-        [name]: "",
-      });
+        [name]: '',
+      })
     }
-  };
+  }
 
   const validateForm = () => {
-    const newErrors: Record<string, string> = {};
+    const newErrors: Record<string, string> = {}
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = 'Email is required'
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
+      newErrors.email = 'Email is invalid'
     }
 
     if (!formData.password) {
-      newErrors.password = "Password is required";
+      newErrors.password = 'Password is required'
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
 
     if (!validateForm()) {
-      return;
+      return
     }
 
-    setIsLoading(true);
+    setIsLoading(true)
+    const res = await networkRef.current.loginWithEmail(
+      formData.email,
+      formData.password,
+    )
+    setIsLoading(false)
 
-    // Simulate API call
-    setTimeout(() => {
-      // In a real app, you would send the data to your backend here
-      console.log("Login data:", formData);
-
-      // Reset form and loading state
-      setFormData({
-        email: "",
-        password: "",
-      });
-      setIsLoading(false);
-
-      // Redirect to dashboard or show success message
-      // In a real app, you would use navigate from react-router-dom
-      // navigate("/dashboard");
-    }, 1500);
-  };
+    // TODO: Handle auth errors
+    if (res.success) {
+      navigate('/dashboard')
+    } else {
+      console.warn('Unable to log in:', res.data)
+    }
+  }
 
   return (
     <div className="login-page">
@@ -92,7 +94,9 @@ export const Login = () => {
 
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="email" className="form-label">Email</label>
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -102,11 +106,15 @@ export const Login = () => {
                 onChange={handleChange}
                 placeholder="Enter your email"
               />
-              {errors.email && <div className="error-message">{errors.email}</div>}
+              {errors.email && (
+                <div className="error-message">{errors.email}</div>
+              )}
             </div>
 
             <div className="form-group">
-              <label htmlFor="password" className="form-label">Password</label>
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
               <input
                 type="password"
                 id="password"
@@ -116,7 +124,9 @@ export const Login = () => {
                 onChange={handleChange}
                 placeholder="Enter your password"
               />
-              {errors.password && <div className="error-message">{errors.password}</div>}
+              {errors.password && (
+                <div className="error-message">{errors.password}</div>
+              )}
             </div>
 
             <button
@@ -136,7 +146,7 @@ export const Login = () => {
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login; 
+export default Login

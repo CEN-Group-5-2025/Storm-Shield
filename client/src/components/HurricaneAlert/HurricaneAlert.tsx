@@ -1,5 +1,5 @@
-import styles from "./HurricaneAlert.module.css";
-import WarningIcon from "./WarningIcon";
+import styles from './HurricaneAlert.module.css'
+import WarningIcon from './WarningIcon'
 
 const HurricaneAlert = () => {
   return (
@@ -12,7 +12,7 @@ const HurricaneAlert = () => {
         Sign up for alerts to stay informed during emergencies
       </p>
     </section>
-  );
-};
+  )
+}
 
-export default HurricaneAlert; 
+export default HurricaneAlert

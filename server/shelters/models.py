@@ -1,6 +1,7 @@
-import black
 from django.db import models
+
 from core.abstracts.models import ModelBase
+
 
 # Create your models here.
 class ShelterData(ModelBase):

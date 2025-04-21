@@ -10,5 +10,3 @@ class ShelterViewSet(ModelViewSet):
     queryset = ShelterData.objects.all()
 
 
-
-# Create your views here.

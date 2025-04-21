@@ -1,4 +1,5 @@
 from typing import Any, ClassVar, Generic, MutableMapping, Optional, Self
+
 from django.db import models
 
 from utils.types import T

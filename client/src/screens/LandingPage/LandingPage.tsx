@@ -1,19 +1,19 @@
-import Footer from "../../components/Footer/Footer";
-import { HeroSection } from "../../components/HeroSection";
-import HurricaneAlert from "../../components/HurricaneAlert/HurricaneAlert";
-import { NavigationBar } from "../../components/NavigationBar";
-import { ScrollIndicator } from "../../components/ScrollIndicator/ScrollIndicator";
-import ShelterLocator from "../../components/ShelterLocator/ShelterLocator";
-import VolunteerHelp from "../../components/VolunteerHelp/VolunteerHelp";
-import "./style.css";
+import Footer from '../../components/Footer/Footer'
+import { HeroSection } from '../../components/HeroSection'
+import HurricaneAlert from '../../components/HurricaneAlert/HurricaneAlert'
+import { NavigationBar } from '../../components/NavigationBar'
+import { ScrollIndicator } from '../../components/ScrollIndicator/ScrollIndicator'
+import ShelterLocator from '../../components/ShelterLocator/ShelterLocator'
+import VolunteerHelp from '../../components/VolunteerHelp/VolunteerHelp'
+import './style.css'
 
 export const LandingPage = () => {
   const scrollToContent = () => {
-    const landingButtons = document.querySelector('.landing-buttons');
+    const landingButtons = document.querySelector('.landing-buttons')
     if (landingButtons) {
-      landingButtons.scrollIntoView({ behavior: 'smooth' });
+      landingButtons.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
   return (
     <div className="landing-page">
@@ -65,5 +65,5 @@ export const LandingPage = () => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}

@@ -1,101 +1,101 @@
-import React, { useEffect, useState } from 'react';
-import Footer from '../../components/Footer/Footer';
-import { NavigationBar } from '../../components/NavigationBar';
-import './volunteer-request.css';
+import React, { useEffect, useState } from 'react'
+import Footer from '../../components/Footer/Footer'
+import { NavigationBar } from '../../components/NavigationBar'
+import './volunteer-request.css'
 
 interface FormData {
-  location: string;
-  workType: string;
+  location: string
+  workType: string
 }
 
 export const VolunteerRequest: React.FC = () => {
-  const [isHeaderAnimated, setIsHeaderAnimated] = useState(false);
+  const [isHeaderAnimated, setIsHeaderAnimated] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     location: '',
-    workType: ''
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    workType: '',
+  })
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState<{ [key: string]: string }>({})
 
   const locationOptions = [
-    "San Juan",
-    "Ponce",
-    "Mayagüez",
-    "Arecibo",
-    "Fajardo"
-  ];
+    'San Juan',
+    'Ponce',
+    'Mayagüez',
+    'Arecibo',
+    'Fajardo',
+  ]
 
   const workTypeOptions = [
-    "Emergency Response",
-    "Shelter Support",
-    "Cleanup & Debris Removal",
-    "Food Distribution",
-    "Medical Assistance",
-    "Community Outreach",
-    "Logistics & Coordination",
-    "Search & Rescue",
-    "Technical Support",
-    "Administrative Support"
-  ];
+    'Emergency Response',
+    'Shelter Support',
+    'Cleanup & Debris Removal',
+    'Food Distribution',
+    'Medical Assistance',
+    'Community Outreach',
+    'Logistics & Coordination',
+    'Search & Rescue',
+    'Technical Support',
+    'Administrative Support',
+  ]
 
   useEffect(() => {
-    setIsHeaderAnimated(true);
-  }, []);
+    setIsHeaderAnimated(true)
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({
+    const { name, value } = e.target
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
-    }));
+      [name]: value,
+    }))
 
     // Clear error when user makes a selection
     if (errors[name]) {
-      setErrors(prev => {
-        const newErrors = { ...prev };
-        delete newErrors[name];
-        return newErrors;
-      });
+      setErrors((prev) => {
+        const newErrors = { ...prev }
+        delete newErrors[name]
+        return newErrors
+      })
     }
-  };
+  }
 
   const validate = (): boolean => {
-    const newErrors: { [key: string]: string } = {};
+    const newErrors: { [key: string]: string } = {}
 
     if (!formData.location) {
-      newErrors.location = "Please select a location";
+      newErrors.location = 'Please select a location'
     }
 
     if (!formData.workType) {
-      newErrors.workType = "Please select a work type";
+      newErrors.workType = 'Please select a work type'
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
 
   const handleFindMatches = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!validate()) {
-      return;
+      return
     }
 
-    setIsLoading(true);
+    setIsLoading(true)
 
     // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitted(true);
+      await new Promise((resolve) => setTimeout(resolve, 1500))
+      setSubmitted(true)
       // In a real application, you would send formData to your backend here
-      console.log("Volunteer request submitted:", formData);
+      console.log('Volunteer request submitted:', formData)
     } catch (error) {
-      console.error("Error submitting volunteer request:", error);
+      console.error('Error submitting volunteer request:', error)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
+  }
 
   return (
     <div className="volunteer-page">
@@ -105,18 +105,23 @@ export const VolunteerRequest: React.FC = () => {
         <NavigationBar />
 
         <main className="volunteer-main">
-          <div className={`volunteer-header ${isHeaderAnimated ? 'animate' : ''}`}>
+          <div
+            className={`volunteer-header ${isHeaderAnimated ? 'animate' : ''}`}
+          >
             <h1 className="page-title">Request a Volunteer</h1>
             <p className="volunteer-subtitle">
-              Need assistance during or after severe weather events? Request help from our network
-              of qualified volunteers who are ready to assist with various tasks in your community.
+              Need assistance during or after severe weather events? Request
+              help from our network of qualified volunteers who are ready to
+              assist with various tasks in your community.
             </p>
           </div>
 
           {!submitted ? (
             <form className="volunteer-form" onSubmit={handleFindMatches}>
               <div className="form-group">
-                <label htmlFor="location" className="form-label">Where would you need a volunteer?</label>
+                <label htmlFor="location" className="form-label">
+                  Where would you need a volunteer?
+                </label>
                 <div className="select-wrapper">
                   <select
                     id="location"
@@ -127,15 +132,21 @@ export const VolunteerRequest: React.FC = () => {
                   >
                     <option value="">Select your location</option>
                     {locationOptions.map((location, index) => (
-                      <option key={index} value={location}>{location}</option>
+                      <option key={index} value={location}>
+                        {location}
+                      </option>
                     ))}
                   </select>
                 </div>
-                {errors.location && <div className="error-message">{errors.location}</div>}
+                {errors.location && (
+                  <div className="error-message">{errors.location}</div>
+                )}
               </div>
 
               <div className="form-group">
-                <label htmlFor="workType" className="form-label">What kind of work are you seeking?</label>
+                <label htmlFor="workType" className="form-label">
+                  What kind of work are you seeking?
+                </label>
                 <div className="select-wrapper">
                   <select
                     id="workType"
@@ -146,11 +157,15 @@ export const VolunteerRequest: React.FC = () => {
                   >
                     <option value="">Select work type</option>
                     {workTypeOptions.map((type, index) => (
-                      <option key={index} value={type}>{type}</option>
+                      <option key={index} value={type}>
+                        {type}
+                      </option>
                     ))}
                   </select>
                 </div>
-                {errors.workType && <div className="error-message">{errors.workType}</div>}
+                {errors.workType && (
+                  <div className="error-message">{errors.workType}</div>
+                )}
               </div>
 
               <button type="submit" className="btn-submit" disabled={isLoading}>
@@ -158,21 +173,24 @@ export const VolunteerRequest: React.FC = () => {
               </button>
 
               <p className="form-info">
-                Our system will match your needs with qualified volunteers in your area.
-                You'll be notified when suitable volunteers are available to help.
+                Our system will match your needs with qualified volunteers in
+                your area. You'll be notified when suitable volunteers are
+                available to help.
               </p>
             </form>
           ) : (
             <div className="volunteer-form">
               <h2 className="success-title">Request Submitted!</h2>
               <p className="success-message">
-                We've received your request for assistance in <strong>{formData.location}</strong> for <strong>{formData.workType}</strong>.
-                We'll notify you when we find volunteers who can help with your needs.
+                We've received your request for assistance in{' '}
+                <strong>{formData.location}</strong> for{' '}
+                <strong>{formData.workType}</strong>. We'll notify you when we
+                find volunteers who can help with your needs.
               </p>
               <button
                 onClick={() => {
-                  setSubmitted(false);
-                  setFormData({ location: '', workType: '' });
+                  setSubmitted(false)
+                  setFormData({ location: '', workType: '' })
                 }}
                 className="btn-submit"
               >
@@ -185,5 +203,5 @@ export const VolunteerRequest: React.FC = () => {
         <Footer />
       </div>
     </div>
-  );
-}; 
+  )
+}

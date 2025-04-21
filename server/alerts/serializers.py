@@ -2,8 +2,9 @@
 JSON Specs for Alerts.
 """
 
-from alerts.models import Alert
 from rest_framework import serializers
+
+from alerts.models import Alert
 
 
 class AlertSerializer(serializers.ModelSerializer):

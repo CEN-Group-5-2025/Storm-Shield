@@ -1,2 +1,1 @@
-export { VolunteerRequest } from './VolunteerRequest';
-
+export { VolunteerRequest } from './VolunteerRequest'
