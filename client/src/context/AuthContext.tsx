@@ -11,6 +11,7 @@ import type { IAlert, IShelter } from 'src/schemas'
 
 export const AuthContext = createContext({
   user: null as IUser | null,
+  userError: null as string | null,
   isAuthenticated: null as boolean | null,
   alerts: [] as IAlert[],
   shelters: [] as IShelter[],
@@ -18,6 +19,7 @@ export const AuthContext = createContext({
 
 export const AuthProvider = (props: { children?: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+  const [userError, setUserError] = useState<string | null>(null)
 
   const [user, setUser] = useState<IUser | null>(null)
   const [alerts, setAlerts] = useState<IAlert[]>([])
@@ -39,7 +41,12 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
   const initializeStores = async () => {
     /* Get current user */
     const userRes = await networkRef.current.getCurrentUser()
-    if (userRes.success) setUser(userRes.data)
+    if (userRes.success) {
+      setUser(userRes.data)
+    } else {
+      console.log('user errors:', userRes.data)
+      setUserError(JSON.stringify(userRes.data))
+    }
 
     /* Get alerts */
     const alertsRes = await networkRef.current.getAlerts()
@@ -77,7 +84,9 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
   }, [user])
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, alerts, shelters }}>
+    <AuthContext.Provider
+      value={{ user, userError, isAuthenticated, alerts, shelters }}
+    >
       {props.children}
     </AuthContext.Provider>
   )
