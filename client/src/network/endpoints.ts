@@ -10,4 +10,8 @@ export const NetworkEndpoints = Object.freeze({
     list: `${API_URL}/alert/alerts/`,
     detail: (id: number) => `${API_URL}/alert/alerts/${id}/`,
   },
+  shelters: {
+    list: `${API_URL}/shelter/shelters/`,
+    detail: (id: number) => `${API_URL}/shelter/shelters/${id}/`,
+  },
 })

@@ -31,7 +31,7 @@ apipatterns = [
         name="api-docs",
     ),
     path("user/", include("users.apis")),
-    path("shelters/", include("shelters.urls")),
+    path("shelter/", include("shelters.urls")),
     path("alert/", include("alerts.urls")),
 ]
 

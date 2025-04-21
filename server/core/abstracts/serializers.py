@@ -76,3 +76,20 @@ class ModelSerializerBase(serializers.ModelSerializer):
         """List of fields that are single or many related."""
 
         return self.related_field_names + self.many_related_field_names
+
+
+class StringListField(serializers.ListField):
+    """Represent a comma-separated string as a list of strings."""
+
+    def to_representation(self, value: str):
+        """Convert to list for json."""
+
+        return value.split(",")
+
+    def to_internal_value(self, data):
+        """Convert to string for database."""
+
+        if isinstance(data, list):
+            return ",".join(data)
+
+        return data

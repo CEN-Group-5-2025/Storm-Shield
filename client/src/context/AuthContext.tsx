@@ -7,18 +7,21 @@ import {
 } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Network } from 'src/network'
-import type { IAlert } from 'src/schemas'
+import type { IAlert, IShelter } from 'src/schemas'
 
 export const AuthContext = createContext({
   user: null as IUser | null,
   isAuthenticated: null as boolean | null,
   alerts: [] as IAlert[],
+  shelters: [] as IShelter[],
 })
 
 export const AuthProvider = (props: { children?: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+
   const [user, setUser] = useState<IUser | null>(null)
   const [alerts, setAlerts] = useState<IAlert[]>([])
+  const [shelters, setShelters] = useState<IShelter[]>([])
 
   const networkRef = useRef(Network.getInstance())
   const navigate = useNavigate()
@@ -36,15 +39,15 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
   const initializeStores = async () => {
     /* Get current user */
     const userRes = await networkRef.current.getCurrentUser()
-    if (userRes.success) {
-      setUser(userRes.data)
-    }
+    if (userRes.success) setUser(userRes.data)
 
     /* Get alerts */
     const alertsRes = await networkRef.current.getAlerts()
-    if (alertsRes.success) {
-      setAlerts(alertsRes.data)
-    }
+    if (alertsRes.success) setAlerts(alertsRes.data)
+
+    /* Get Shelters */
+    const sheltersRes = await networkRef.current.getShelters()
+    if (sheltersRes.success) setShelters(sheltersRes.data)
   }
 
   useEffect(() => {
@@ -74,7 +77,7 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
   }, [user])
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, alerts }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, alerts, shelters }}>
       {props.children}
     </AuthContext.Provider>
   )
