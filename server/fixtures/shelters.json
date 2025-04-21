@@ -1,17 +1,274 @@
-[{"model":"shelters.shelterdata","pk":1,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"STRATFORD HOSPITAL DISTRICT D/B/A VALLEY VIEW CARE CENTER","shelter_addy":"79 2nd Plaza","shelter_city":"Ban Ko Lan","capacity":43,"occupancy":120,"lat":13.75639,"long":100.5073712,"amenities":"Medical"}},
-{"model":"shelters.shelterdata","pk":2,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"RIVEREDGE HOSPITAL, INC.","shelter_addy":"171 Meadow Vale Court","shelter_city":"Liangting","capacity":0,"occupancy":95,"lat":30.543283,"long":117.062623,"amenities":"Shower"}},
-{"model":"shelters.shelterdata","pk":3,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"RINCON MEDICAL CENTER","shelter_addy":"5 Glendale Circle","shelter_city":"Ampanihy","capacity":12,"occupancy":141,"lat":-24.6930487,"long":44.7451765,"amenities":"Electricity"}},
-{"model":"shelters.shelterdata","pk":4,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"THE MILTON S HERSHEY MEDICAL CENTER PHYSICIANS GROUP","shelter_addy":"583 Glendale Center","shelter_city":"Changjiang","capacity":248,"occupancy":7,"lat":30.5211502,"long":112.8915932,"amenities":"Water"}},
-{"model":"shelters.shelterdata","pk":5,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"SPARROW IONIA HOSPITAL","shelter_addy":"4085 Troy Drive","shelter_city":"Kodra","capacity":290,"occupancy":191,"lat":50.5602346,"long":29.5970439,"amenities":"Other"}},
-{"model":"shelters.shelterdata","pk":6,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"CAMERON HOSPITAL INC","shelter_addy":"22 Jenifer Center","shelter_city":"Unidad","capacity":253,"occupancy":107,"lat":14.556369,"long":121.1375395,"amenities":"Shower"}},
-{"model":"shelters.shelterdata","pk":7,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"M&V SAN JOSE MEDICAL CENTER LLC","shelter_addy":"4 Loeprich Place","shelter_city":"Qingkenpao","capacity":41,"occupancy":37,"lat":46.409427,"long":125.4464411,"amenities":"Food"}},
-{"model":"shelters.shelterdata","pk":8,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"TYLER COUNTY HOSPITAL DISTRICT","shelter_addy":"20196 Dexter Street","shelter_city":"Qinghe","capacity":10,"occupancy":132,"lat":37.039991,"long":115.667208,"amenities":"Other"}},
-{"model":"shelters.shelterdata","pk":9,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"PUNGO DISTRICT HOSPITAL CORPORATION","shelter_addy":"49 Heath Drive","shelter_city":"Chengbei","capacity":206,"occupancy":107,"lat":36.650038,"long":101.766228,"amenities":"Shower"}},
-{"model":"shelters.shelterdata","pk":10,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"TOWNE LAKE REHAB & MEDICAL CENTER LLC","shelter_addy":"6 Hintze Lane","shelter_city":"Santa Cruz","capacity":148,"occupancy":69,"lat":19.6938888,"long":-99.2591666,"amenities":"Water"}},
-{"model":"shelters.shelterdata","pk":11,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"HOSPITAL AUTHORITY OF MITCHELL COUNTY","shelter_addy":"521 Dakota Terrace","shelter_city":"Soledad","capacity":236,"occupancy":19,"lat":8.1707969,"long":-63.5658573,"amenities":"Other"}},
-{"model":"shelters.shelterdata","pk":12,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"F&M RADIOLOGY MEDICAL CENTER INC","shelter_addy":"3 Dwight Street","shelter_city":"Mežica","capacity":116,"occupancy":187,"lat":46.5214145,"long":14.8523952,"amenities":"Medical"}},
-{"model":"shelters.shelterdata","pk":13,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"JORDAN HOSPITAL ANESTHESIA ASSOCIATES, PC","shelter_addy":"420 West Crossing","shelter_city":"Baoshan","capacity":138,"occupancy":170,"lat":25.112046,"long":99.161761,"amenities":"Water"}},
-{"model":"shelters.shelterdata","pk":14,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"NORTH BROWARD HOSPITAL DISTRICT","shelter_addy":"46503 Elka Junction","shelter_city":"Jiangfang","capacity":10,"occupancy":16,"lat":27.372513,"long":117.731346,"amenities":"Medical"}},
-{"model":"shelters.shelterdata","pk":15,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"NAVAL HOSPITAL YOKOSUKA","shelter_addy":"05972 Menomonie Center","shelter_city":"Ash Shajarah","capacity":162,"occupancy":2,"lat":32.6434902,"long":35.9396453,"amenities":"Other"}},
-{"model":"shelters.shelterdata","pk":16,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"DUNDY COUNTY HOSPITAL","shelter_addy":"95 Aberg Hill","shelter_city":"Salor","capacity":81,"occupancy":75,"lat":41.37222,"long":69.38167,"amenities":"Food"}},
-{"model":"shelters.shelterdata","pk":17,"fields":{"created_at":"2025-04-14","updated_at":"2025-04-14","shelter_name":"BANNER MESA MEDICAL CENTER","shelter_addy":"37 Jana Alley","shelter_city":"Rixi","capacity":23,"occupancy":199,"lat":28.856082,"long":93.388853,"amenities":"Medical"}}]
+[
+  {
+    "model": "shelters.shelterdata",
+    "pk": 1,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "STRATFORD HOSPITAL DISTRICT D/B/A VALLEY VIEW CARE CENTER",
+      "addy": "79 2nd Plaza",
+      "city": "Ban Ko Lan",
+      "capacity": 43,
+      "occupancy": 120,
+      "lat": 13.75639,
+      "long": 100.5073712,
+      "amenities": "Medical"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 2,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "RIVEREDGE HOSPITAL, INC.",
+      "addy": "171 Meadow Vale Court",
+      "city": "Liangting",
+      "capacity": 0,
+      "occupancy": 95,
+      "lat": 30.543283,
+      "long": 117.062623,
+      "amenities": "Shower"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 3,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "RINCON MEDICAL CENTER",
+      "addy": "5 Glendale Circle",
+      "city": "Ampanihy",
+      "capacity": 12,
+      "occupancy": 141,
+      "lat": -24.6930487,
+      "long": 44.7451765,
+      "amenities": "Electricity"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 4,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "THE MILTON S HERSHEY MEDICAL CENTER PHYSICIANS GROUP",
+      "addy": "583 Glendale Center",
+      "city": "Changjiang",
+      "capacity": 248,
+      "occupancy": 7,
+      "lat": 30.5211502,
+      "long": 112.8915932,
+      "amenities": "Water"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 5,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "SPARROW IONIA HOSPITAL",
+      "addy": "4085 Troy Drive",
+      "city": "Kodra",
+      "capacity": 290,
+      "occupancy": 191,
+      "lat": 50.5602346,
+      "long": 29.5970439,
+      "amenities": "Other"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 6,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "CAMERON HOSPITAL INC",
+      "addy": "22 Jenifer Center",
+      "city": "Unidad",
+      "capacity": 253,
+      "occupancy": 107,
+      "lat": 14.556369,
+      "long": 121.1375395,
+      "amenities": "Shower"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 7,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "M&V SAN JOSE MEDICAL CENTER LLC",
+      "addy": "4 Loeprich Place",
+      "city": "Qingkenpao",
+      "capacity": 41,
+      "occupancy": 37,
+      "lat": 46.409427,
+      "long": 125.4464411,
+      "amenities": "Food"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 8,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "TYLER COUNTY HOSPITAL DISTRICT",
+      "addy": "20196 Dexter Street",
+      "city": "Qinghe",
+      "capacity": 10,
+      "occupancy": 132,
+      "lat": 37.039991,
+      "long": 115.667208,
+      "amenities": "Other"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 9,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "PUNGO DISTRICT HOSPITAL CORPORATION",
+      "addy": "49 Heath Drive",
+      "city": "Chengbei",
+      "capacity": 206,
+      "occupancy": 107,
+      "lat": 36.650038,
+      "long": 101.766228,
+      "amenities": "Shower"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 10,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "TOWNE LAKE REHAB & MEDICAL CENTER LLC",
+      "addy": "6 Hintze Lane",
+      "city": "Santa Cruz",
+      "capacity": 148,
+      "occupancy": 69,
+      "lat": 19.6938888,
+      "long": -99.2591666,
+      "amenities": "Water"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 11,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "HOSPITAL AUTHORITY OF MITCHELL COUNTY",
+      "addy": "521 Dakota Terrace",
+      "city": "Soledad",
+      "capacity": 236,
+      "occupancy": 19,
+      "lat": 8.1707969,
+      "long": -63.5658573,
+      "amenities": "Other"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 12,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "F&M RADIOLOGY MEDICAL CENTER INC",
+      "addy": "3 Dwight Street",
+      "city": "Mežica",
+      "capacity": 116,
+      "occupancy": 187,
+      "lat": 46.5214145,
+      "long": 14.8523952,
+      "amenities": "Medical"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 13,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "JORDAN HOSPITAL ANESTHESIA ASSOCIATES, PC",
+      "addy": "420 West Crossing",
+      "city": "Baoshan",
+      "capacity": 138,
+      "occupancy": 170,
+      "lat": 25.112046,
+      "long": 99.161761,
+      "amenities": "Water"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 14,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "NORTH BROWARD HOSPITAL DISTRICT",
+      "addy": "46503 Elka Junction",
+      "city": "Jiangfang",
+      "capacity": 10,
+      "occupancy": 16,
+      "lat": 27.372513,
+      "long": 117.731346,
+      "amenities": "Medical"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 15,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "NAVAL HOSPITAL YOKOSUKA",
+      "addy": "05972 Menomonie Center",
+      "city": "Ash Shajarah",
+      "capacity": 162,
+      "occupancy": 2,
+      "lat": 32.6434902,
+      "long": 35.9396453,
+      "amenities": "Other"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 16,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "DUNDY COUNTY HOSPITAL",
+      "addy": "95 Aberg Hill",
+      "city": "Salor",
+      "capacity": 81,
+      "occupancy": 75,
+      "lat": 41.37222,
+      "long": 69.38167,
+      "amenities": "Food"
+    }
+  },
+  {
+    "model": "shelters.shelterdata",
+    "pk": 17,
+    "fields": {
+      "created_at": "2025-04-14",
+      "updated_at": "2025-04-14",
+      "name": "BANNER MESA MEDICAL CENTER",
+      "addy": "37 Jana Alley",
+      "city": "Rixi",
+      "capacity": 23,
+      "occupancy": 199,
+      "lat": 28.856082,
+      "long": 93.388853,
+      "amenities": "Medical"
+    }
+  }
+]

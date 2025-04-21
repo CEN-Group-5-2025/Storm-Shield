@@ -1,23 +1,12 @@
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { AuthContext } from 'src/context'
+import type { IShelter } from 'src/schemas'
 import Footer from '../../components/Footer/Footer'
 import { NavigationBar } from '../../components/NavigationBar'
 import './shelter-locator.css'
-
-// Define shelter data type
-interface Shelter {
-  id: number
-  name: string
-  address: string
-  city: string
-  capacity: number
-  occupancy: number
-  coordinates: [number, number] // [latitude, longitude]
-  amenities: string[]
-  lastUpdated: string
-}
 
 // Create a custom icon using divIcon for better control
 const shelterIcon = L.divIcon({
@@ -32,10 +21,12 @@ const shelterIcon = L.divIcon({
 })
 
 export const ShelterLocatorPage = () => {
-  const [shelters, setShelters] = useState<Shelter[]>([])
+  // const [shelters, setShelters] = useState<Shelter[]>([])
   const [loading, setLoading] = useState(true)
-  const [selectedShelter, setSelectedShelter] = useState<Shelter | null>(null)
+  const [selectedShelter, setSelectedShelter] = useState<IShelter | null>(null)
   const [animateHeader, setAnimateHeader] = useState(false)
+
+  const { shelters } = useContext(AuthContext)
 
   // Puerto Rico center coordinates
   const mapCenter: [number, number] = [18.2208, -66.5901]
@@ -45,24 +36,10 @@ export const ShelterLocatorPage = () => {
     setTimeout(() => {
       setAnimateHeader(true)
     }, 300)
-
-    // Fetch shelter data - in a real app, this would be an API call
-    // For now, we'll use mock data
-    const fetchShelters = async () => {
-      setLoading(true)
-
-      // Simulate API call delay
-      setTimeout(() => {
-        setShelters(mockShelters)
-        setLoading(false)
-      }, 1000)
-    }
-
-    fetchShelters()
   }, [])
 
   // Mock shelter data
-  const mockShelters: Shelter[] = [
+  const mockShelters: any[] = [
     {
       id: 1,
       name: 'San Juan Community Center',
@@ -121,12 +98,12 @@ export const ShelterLocatorPage = () => {
   ]
 
   // Calculate occupancy percentage
-  const getOccupancyPercentage = (shelter: Shelter) => {
+  const getOccupancyPercentage = (shelter: IShelter) => {
     return Math.round((shelter.occupancy / shelter.capacity) * 100)
   }
 
   // Get occupancy status class
-  const getOccupancyStatusClass = (shelter: Shelter) => {
+  const getOccupancyStatusClass = (shelter: IShelter) => {
     const percentage = getOccupancyPercentage(shelter)
     if (percentage < 50) return 'low-occupancy'
     if (percentage < 80) return 'medium-occupancy'
@@ -161,7 +138,7 @@ export const ShelterLocatorPage = () => {
                   {shelters.map((shelter) => (
                     <Marker
                       key={shelter.id}
-                      position={shelter.coordinates}
+                      position={[shelter.lat, shelter.long]}
                       icon={shelterIcon}
                       eventHandlers={{
                         click: () => {
@@ -173,7 +150,7 @@ export const ShelterLocatorPage = () => {
                         <div className="shelter-popup">
                           <h3>{shelter.name}</h3>
                           <p>
-                            {shelter.address}, {shelter.city}
+                            {shelter.addy}, {shelter.city}
                           </p>
                           <p className="occupancy-info">
                             Occupancy:{' '}
@@ -222,7 +199,7 @@ export const ShelterLocatorPage = () => {
                       </div>
 
                       <p className="shelter-address">
-                        {shelter.address}, {shelter.city}
+                        {shelter.addy}, {shelter.addy}
                       </p>
 
                       <div className="shelter-amenities">
@@ -238,7 +215,7 @@ export const ShelterLocatorPage = () => {
                           {shelter.occupancy}/{shelter.capacity} people
                         </span>
                         <span className="update-time">
-                          Updated {shelter.lastUpdated}
+                          Updated {shelter.updated_at}
                         </span>
                       </div>
                     </div>
@@ -263,7 +240,7 @@ export const ShelterLocatorPage = () => {
               <div className="shelter-details-content">
                 <div className="shelter-info-section">
                   <h3>Location</h3>
-                  <p>{selectedShelter.address}</p>
+                  <p>{selectedShelter.addy}</p>
                   <p>{selectedShelter.city}, Puerto Rico</p>
                 </div>
 
@@ -297,7 +274,7 @@ export const ShelterLocatorPage = () => {
 
                 <div className="shelter-info-section">
                   <h3>Last Updated</h3>
-                  <p>{selectedShelter.lastUpdated}</p>
+                  <p>{selectedShelter.updated_at}</p>
                 </div>
               </div>
 
