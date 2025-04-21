@@ -33,6 +33,7 @@ apipatterns = [
     path("user/", include("users.apis")),
     path("shelters/", include("shelters.urls")),
     path("alert/", include("alerts.urls")),
+    path("post/", include("posts.urls")),
 ]
 
 urlpatterns = [
