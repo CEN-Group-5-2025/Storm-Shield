@@ -112,10 +112,20 @@ export const ShelterLocatorPage = () => {
 
   // Get occupancy status class
   const getOccupancyStatusClass = (shelter: IShelter) => {
+    // Handle case where capacity is 0 or less to avoid division by zero
+    if (shelter.capacity <= 0) {
+      return 'unknown-occupancy' // Or some other appropriate class/handling
+    }
+
+    // Check if full or over capacity first
+    if (shelter.occupancy >= shelter.capacity) {
+      return 'full-occupancy'
+    }
+
     const percentage = getOccupancyPercentage(shelter)
     if (percentage < 50) return 'low-occupancy'
     if (percentage < 80) return 'medium-occupancy'
-    return 'high-occupancy'
+    return 'high-occupancy' // This case implies percentage is 80-99
   }
 
   return (
@@ -163,8 +173,9 @@ export const ShelterLocatorPage = () => {
                           <p className="occupancy-info">
                             Occupancy:{' '}
                             <span className={getOccupancyStatusClass(shelter)}>
-                              {shelter.occupancy}/{shelter.capacity} (
-                              {getOccupancyPercentage(shelter)}%)
+                              {shelter.occupancy >= shelter.capacity
+                                ? 'Full'
+                                : `${shelter.occupancy}/${shelter.capacity} (${getOccupancyPercentage(shelter)}%)`}
                             </span>
                           </p>
                         </div>
@@ -207,7 +218,9 @@ export const ShelterLocatorPage = () => {
                           <div
                             className={`occupancy-badge ${getOccupancyStatusClass(shelter)}`}
                           >
-                            {getOccupancyPercentage(shelter)}%
+                            {shelter.occupancy >= shelter.capacity
+                              ? 'Full'
+                              : `${getOccupancyPercentage(shelter)}%`}
                           </div>
                         </div>
 
@@ -264,13 +277,14 @@ export const ShelterLocatorPage = () => {
                     <div
                       className={`capacity-bar ${getOccupancyStatusClass(selectedShelter)}`}
                       style={{
-                        width: `${getOccupancyPercentage(selectedShelter)}%`,
+                        width: `${selectedShelter.occupancy >= selectedShelter.capacity ? 100 : getOccupancyPercentage(selectedShelter)}%`,
                       }}
                     ></div>
                   </div>
                   <p>
-                    {selectedShelter.occupancy} of {selectedShelter.capacity}{' '}
-                    spaces occupied
+                    {selectedShelter.occupancy >= selectedShelter.capacity
+                      ? 'Shelter is currently full'
+                      : `${selectedShelter.occupancy} of ${selectedShelter.capacity} spaces occupied`}
                   </p>
                 </div>
 

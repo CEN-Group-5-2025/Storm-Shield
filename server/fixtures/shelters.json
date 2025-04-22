@@ -7,11 +7,11 @@
       "updated_at": "2025-04-14",
       "name": "STRATFORD HOSPITAL DISTRICT D/B/A VALLEY VIEW CARE CENTER",
       "addy": "79 2nd Plaza",
-      "city": "Ban Ko Lan",
+      "city": "San Juan",
       "capacity": 43,
       "occupancy": 120,
-      "lat": 13.75639,
-      "long": 100.5073712,
+      "lat": 18.4655,
+      "long": -66.1057,
       "amenities": "Medical"
     }
   },
@@ -23,11 +23,11 @@
       "updated_at": "2025-04-14",
       "name": "RIVEREDGE HOSPITAL, INC.",
       "addy": "171 Meadow Vale Court",
-      "city": "Liangting",
+      "city": "Ponce",
       "capacity": 0,
       "occupancy": 95,
-      "lat": 30.543283,
-      "long": 117.062623,
+      "lat": 18.0111,
+      "long": -66.6141,
       "amenities": "Shower"
     }
   },
@@ -39,11 +39,11 @@
       "updated_at": "2025-04-14",
       "name": "RINCON MEDICAL CENTER",
       "addy": "5 Glendale Circle",
-      "city": "Ampanihy",
+      "city": "Mayagüez",
       "capacity": 12,
       "occupancy": 141,
-      "lat": -24.6930487,
-      "long": 44.7451765,
+      "lat": 18.2011,
+      "long": -67.1397,
       "amenities": "Electricity"
     }
   },
@@ -55,11 +55,11 @@
       "updated_at": "2025-04-14",
       "name": "THE MILTON S HERSHEY MEDICAL CENTER PHYSICIANS GROUP",
       "addy": "583 Glendale Center",
-      "city": "Changjiang",
+      "city": "Arecibo",
       "capacity": 248,
       "occupancy": 7,
-      "lat": 30.5211502,
-      "long": 112.8915932,
+      "lat": 18.4725,
+      "long": -66.7156,
       "amenities": "Water"
     }
   },
@@ -71,11 +71,11 @@
       "updated_at": "2025-04-14",
       "name": "SPARROW IONIA HOSPITAL",
       "addy": "4085 Troy Drive",
-      "city": "Kodra",
+      "city": "Fajardo",
       "capacity": 290,
       "occupancy": 191,
-      "lat": 50.5602346,
-      "long": 29.5970439,
+      "lat": 18.3366,
+      "long": -65.6528,
       "amenities": "Other"
     }
   },
@@ -87,11 +87,11 @@
       "updated_at": "2025-04-14",
       "name": "CAMERON HOSPITAL INC",
       "addy": "22 Jenifer Center",
-      "city": "Unidad",
+      "city": "Caguas",
       "capacity": 253,
       "occupancy": 107,
-      "lat": 14.556369,
-      "long": 121.1375395,
+      "lat": 18.2343,
+      "long": -66.0482,
       "amenities": "Shower"
     }
   },
@@ -103,11 +103,11 @@
       "updated_at": "2025-04-14",
       "name": "M&V SAN JOSE MEDICAL CENTER LLC",
       "addy": "4 Loeprich Place",
-      "city": "Qingkenpao",
+      "city": "Bayamón",
       "capacity": 41,
       "occupancy": 37,
-      "lat": 46.409427,
-      "long": 125.4464411,
+      "lat": 18.3980,
+      "long": -66.1557,
       "amenities": "Food"
     }
   },
@@ -119,11 +119,11 @@
       "updated_at": "2025-04-14",
       "name": "TYLER COUNTY HOSPITAL DISTRICT",
       "addy": "20196 Dexter Street",
-      "city": "Qinghe",
+      "city": "Guayama",
       "capacity": 10,
       "occupancy": 132,
-      "lat": 37.039991,
-      "long": 115.667208,
+      "lat": 17.9878,
+      "long": -66.1113,
       "amenities": "Other"
     }
   },
@@ -135,11 +135,11 @@
       "updated_at": "2025-04-14",
       "name": "PUNGO DISTRICT HOSPITAL CORPORATION",
       "addy": "49 Heath Drive",
-      "city": "Chengbei",
+      "city": "Humacao",
       "capacity": 206,
       "occupancy": 107,
-      "lat": 36.650038,
-      "long": 101.766228,
+      "lat": 18.1497,
+      "long": -65.8274,
       "amenities": "Shower"
     }
   },
@@ -151,11 +151,11 @@
       "updated_at": "2025-04-14",
       "name": "TOWNE LAKE REHAB & MEDICAL CENTER LLC",
       "addy": "6 Hintze Lane",
-      "city": "Santa Cruz",
+      "city": "Vega Baja",
       "capacity": 148,
       "occupancy": 69,
-      "lat": 19.6938888,
-      "long": -99.2591666,
+      "lat": 18.4466,
+      "long": -66.3888,
       "amenities": "Water"
     }
   },
@@ -167,11 +167,11 @@
       "updated_at": "2025-04-14",
       "name": "HOSPITAL AUTHORITY OF MITCHELL COUNTY",
       "addy": "521 Dakota Terrace",
-      "city": "Soledad",
+      "city": "Yauco",
       "capacity": 236,
       "occupancy": 19,
-      "lat": 8.1707969,
-      "long": -63.5658573,
+      "lat": 18.0336,
+      "long": -66.8499,
       "amenities": "Other"
     }
   },
@@ -183,11 +183,11 @@
       "updated_at": "2025-04-14",
       "name": "F&M RADIOLOGY MEDICAL CENTER INC",
       "addy": "3 Dwight Street",
-      "city": "Mežica",
+      "city": "Carolina",
       "capacity": 116,
       "occupancy": 187,
-      "lat": 46.5214145,
-      "long": 14.8523952,
+      "lat": 18.3808,
+      "long": -65.9571,
       "amenities": "Medical"
     }
   },
@@ -199,11 +199,11 @@
       "updated_at": "2025-04-14",
       "name": "JORDAN HOSPITAL ANESTHESIA ASSOCIATES, PC",
       "addy": "420 West Crossing",
-      "city": "Baoshan",
+      "city": "Aguadilla",
       "capacity": 138,
       "occupancy": 170,
-      "lat": 25.112046,
-      "long": 99.161761,
+      "lat": 18.4280,
+      "long": -67.1535,
       "amenities": "Water"
     }
   },
@@ -215,11 +215,11 @@
       "updated_at": "2025-04-14",
       "name": "NORTH BROWARD HOSPITAL DISTRICT",
       "addy": "46503 Elka Junction",
-      "city": "Jiangfang",
+      "city": "Manatí",
       "capacity": 10,
       "occupancy": 16,
-      "lat": 27.372513,
-      "long": 117.731346,
+      "lat": 18.4275,
+      "long": -66.4913,
       "amenities": "Medical"
     }
   },
@@ -231,11 +231,11 @@
       "updated_at": "2025-04-14",
       "name": "NAVAL HOSPITAL YOKOSUKA",
       "addy": "05972 Menomonie Center",
-      "city": "Ash Shajarah",
+      "city": "Cayey",
       "capacity": 162,
       "occupancy": 2,
-      "lat": 32.6434902,
-      "long": 35.9396453,
+      "lat": 18.1116,
+      "long": -66.1660,
       "amenities": "Other"
     }
   },
@@ -247,11 +247,11 @@
       "updated_at": "2025-04-14",
       "name": "DUNDY COUNTY HOSPITAL",
       "addy": "95 Aberg Hill",
-      "city": "Salor",
+      "city": "Vieques",
       "capacity": 81,
       "occupancy": 75,
-      "lat": 41.37222,
-      "long": 69.38167,
+      "lat": 18.1297,
+      "long": -65.4438,
       "amenities": "Food"
     }
   },
@@ -263,11 +263,11 @@
       "updated_at": "2025-04-14",
       "name": "BANNER MESA MEDICAL CENTER",
       "addy": "37 Jana Alley",
-      "city": "Rixi",
+      "city": "Isabela",
       "capacity": 23,
       "occupancy": 199,
-      "lat": 28.856082,
-      "long": 93.388853,
+      "lat": 18.4997,
+      "long": -67.0243,
       "amenities": "Medical"
     }
   }
