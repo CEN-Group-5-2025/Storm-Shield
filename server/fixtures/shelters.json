@@ -5,6 +5,7 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
+
       "name": "Esc. José Emilio Lugo",
       "addy": "579H+C7H",
       "city": "Los Cerros",
@@ -37,6 +38,7 @@
     "fields": {
       "created_at": "2025-04-14",
       "updated_at": "2025-04-14",
+
       "name": "Esc. Eladio Tirado López",
       "addy": "9R9V+QH8",
       "city": "Aguada",
