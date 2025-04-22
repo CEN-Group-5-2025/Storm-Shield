@@ -1,87 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { AuthContext } from 'src/context'
 import Footer from '../../components/Footer/Footer'
 import { NavigationBar } from '../../components/NavigationBar'
 import './community.css'
 
-// Types
-interface Post {
-  id: number
-  author: string
-  title: string
-  content: string
-  timestamp: string
-  votes: number
-  userVote: 'up' | 'down' | null
-  authorAvatar: string
-}
-
 export const Community = () => {
-  // Sample initial posts
-  const initialPosts: Post[] = [
-    {
-      id: 1,
-      author: 'HurricaneHelper',
-      title: 'Hurricane Preparation Tips',
-      content:
-        "I've been through several hurricanes and wanted to share some preparation tips that have helped me. Make sure to stock up on non-perishable food, water (1 gallon per person per day), batteries, and flashlights. Charge all your devices before the storm hits. If you have pets, don't forget to prepare for them too!",
-      timestamp: '2 hours ago',
-      votes: 45,
-      userVote: null,
-      authorAvatar: 'H',
-    },
-    {
-      id: 2,
-      author: 'IslandResident',
-      title: 'Power Outage in San Juan Area',
-      content:
-        "Is anyone else experiencing power outages in the San Juan metropolitan area? Our electricity went out about an hour ago, and I'm trying to get information about when it might be restored. Any updates would be appreciated!",
-      timestamp: '4 hours ago',
-      votes: 32,
-      userVote: null,
-      authorAvatar: 'I',
-    },
-    {
-      id: 3,
-      author: 'EmergencyVolunteer',
-      title: 'Volunteer Opportunities in Ponce',
-      content:
-        "The community center in Ponce is looking for volunteers to help distribute supplies this weekend. They need people from 9 AM to 5 PM on Saturday and Sunday. If you're available, please consider helping out. You can sign up at the community center or call (555) 123-4567.",
-      timestamp: 'Yesterday',
-      votes: 78,
-      userVote: null,
-      authorAvatar: 'E',
-    },
-    {
-      id: 4,
-      author: 'RoadConditions',
-      title: 'Road Closure Update: PR-52',
-      content:
-        'PR-52 is currently closed between km 45 and km 52 due to flooding. Authorities estimate it will reopen tomorrow morning. Please use PR-1 as an alternative route if you need to travel in that area.',
-      timestamp: 'Yesterday',
-      votes: 103,
-      userVote: null,
-      authorAvatar: 'R',
-    },
-    {
-      id: 5,
-      author: 'WeatherWatcher',
-      title: 'Tropical Storm Forming in the Atlantic',
-      content:
-        "Meteorologists are tracking a tropical depression that could develop into a tropical storm in the next 48 hours. It's currently about 800 miles east of the Lesser Antilles and moving west-northwest at 15 mph. We should keep an eye on this system as it could potentially affect Puerto Rico next week.",
-      timestamp: '2 days ago',
-      votes: 89,
-      userVote: null,
-      authorAvatar: 'W',
-    },
-  ]
-
-  const [posts, setPosts] = useState<Post[]>(initialPosts)
+  // const [posts, setPosts] = useState<Post[]>([])
   const [newPostTitle, setNewPostTitle] = useState('')
   const [newPostContent, setNewPostContent] = useState('')
   const [showNewPostForm, setShowNewPostForm] = useState(false)
   const [activeFilter, setActiveFilter] = useState('latest')
   const [isLoading, setIsLoading] = useState(false)
   const [animateHeader, setAnimateHeader] = useState(false)
+
+  const { posts, updatePost, createPost, postsError } = useContext(AuthContext)
 
   useEffect(() => {
     // Animate header on load
@@ -92,66 +24,58 @@ export const Community = () => {
 
   // Handle voting
   const handleVote = (postId: number, voteType: 'up' | 'down') => {
-    setPosts(
-      posts.map((post) => {
-        if (post.id === postId) {
-          // If user already voted the same way, remove the vote
-          if (post.userVote === voteType) {
-            return {
-              ...post,
-              votes: voteType === 'up' ? post.votes - 1 : post.votes + 1,
-              userVote: null,
-            }
-          }
-          // If user already voted the opposite way, change the vote (counts as 2)
-          else if (post.userVote !== null) {
-            return {
-              ...post,
-              votes: voteType === 'up' ? post.votes + 2 : post.votes - 2,
-              userVote: voteType,
-            }
-          }
-          // If user hasn't voted yet
-          else {
-            return {
-              ...post,
-              votes: voteType === 'up' ? post.votes + 1 : post.votes - 1,
-              userVote: voteType,
-            }
-          }
-        }
-        return post
-      }),
-    )
+    // TODO: Handle voting!!
+    // setPosts(
+    //   posts.map((post) => {
+    //     if (post.id === postId) {
+    //       // If user already voted the same way, remove the vote
+    //       if (post.userVote === voteType) {
+    //         return {
+    //           ...post,
+    //           votes: voteType === 'up' ? post.votes - 1 : post.votes + 1,
+    //           userVote: null,
+    //         }
+    //       }
+    //       // If user already voted the opposite way, change the vote (counts as 2)
+    //       else if (post.userVote !== null) {
+    //         return {
+    //           ...post,
+    //           votes: voteType === 'up' ? post.votes + 2 : post.votes - 2,
+    //           userVote: voteType,
+    //         }
+    //       }
+    //       // If user hasn't voted yet
+    //       else {
+    //         return {
+    //           ...post,
+    //           votes: voteType === 'up' ? post.votes + 1 : post.votes - 1,
+    //           userVote: voteType,
+    //         }
+    //       }
+    //     }
+    //     return post
+    //   }),
+    // )
   }
 
   // Handle creating a new post
-  const handleCreatePost = () => {
+  const handleCreatePost = async () => {
     if (newPostTitle.trim() === '' || newPostContent.trim() === '') {
       return
     }
 
     setIsLoading(true)
 
-    // Simulate network delay
-    setTimeout(() => {
-      const newPost: Post = {
-        id: Date.now(),
-        author: 'CurrentUser', // In a real app, this would be the logged-in user
-        title: newPostTitle,
-        content: newPostContent,
-        timestamp: 'Just now',
-        votes: 0,
-        userVote: null,
-        authorAvatar: 'C',
-      }
-
-      setPosts([newPost, ...posts])
+    const res = await createPost({
+      title: newPostTitle,
+      content: newPostContent,
+    })
+    if (res.success) {
       setNewPostTitle('')
       setNewPostContent('')
       setShowNewPostForm(false)
       setIsLoading(false)
-    }, 800)
+    }
   }
 
   // Filter posts
@@ -240,6 +164,7 @@ export const Community = () => {
               >
                 {isLoading ? 'Posting...' : 'Post'}
               </button>
+              <p>{postsError}</p>
             </div>
           )}
 
@@ -291,12 +216,14 @@ export const Community = () => {
                     <h3 className="post-title">{post.title}</h3>
                     <div className="post-meta">
                       <div className="author-info">
-                        <div className="author-avatar">{post.authorAvatar}</div>
+                        <div className="author-avatar">{post.avatar}</div>
                         <span className="post-author">
                           Posted by {post.author}
                         </span>
                       </div>
-                      <span className="post-timestamp">{post.timestamp}</span>
+                      <span className="post-timestamp">
+                        {new Date(post.created_at).toLocaleDateString()}
+                      </span>
                     </div>
                   </div>
 

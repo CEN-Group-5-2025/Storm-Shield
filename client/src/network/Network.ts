@@ -1,4 +1,11 @@
-import { ShelterListSchema, UserDetailsSchema } from 'src/schemas'
+import type { IPostCreate } from 'src/schemas'
+import {
+  PostCreateSchema,
+  PostListSchema,
+  PostSchema,
+  ShelterListSchema,
+  UserDetailsSchema,
+} from 'src/schemas'
 import { AlertListSchema } from 'src/schemas/alert'
 import { mockUser } from 'src/utils'
 import { NetworkBase } from './NetworkBase'
@@ -50,5 +57,24 @@ export class Network extends NetworkBase {
     const url = this.endpoints.shelters.list
 
     return await this.request(url, ShelterListSchema)
+  }
+
+  /**
+   * Fetch posts.
+   */
+  public async getPosts() {
+    const url = this.endpoints.posts.list
+
+    return await this.request(url, PostListSchema)
+  }
+
+  /**
+   * Create new post.
+   */
+  public async createPost(payload: IPostCreate) {
+    const url = this.endpoints.posts.list
+    const data = PostCreateSchema.parse(payload)
+
+    return await this.request(url, PostSchema, { method: 'POST', data })
   }
 }
