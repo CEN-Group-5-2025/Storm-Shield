@@ -1,8 +1,22 @@
 from rest_framework import serializers
-from .models import PostBase
+
+from posts.models import PostBase
 
 
-class PostBaseSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
+
+    author = serializers.SlugRelatedField(slug_field="email", read_only=True)
+
     class Meta:
         model = PostBase
-        fields = '__all__'
+        fields = [
+            "id",
+            "title",
+            "content",
+            "author",
+            "avatar",
+            "votes",
+            "created_at",
+            "updated_at",
+        ]
+        # extra_kwargs = {"author": {"read_only": True}}
