@@ -38,6 +38,14 @@ export const ShelterLocatorPage = () => {
     }, 300)
   }, [])
 
+  // Set loading to false when shelters data is loaded
+  useEffect(() => {
+    // Check if shelters is no longer undefined (has been loaded)
+    if (shelters !== undefined) {
+      setLoading(false)
+    }
+  }, [shelters]) // Dependency array includes shelters
+
   // Mock shelter data
   const mockShelters: any[] = [
     {
@@ -183,43 +191,49 @@ export const ShelterLocatorPage = () => {
                 </div>
               ) : (
                 <div className="shelter-list">
-                  {shelters.map((shelter) => (
-                    <div
-                      key={shelter.id}
-                      className={`shelter-card ${selectedShelter?.id === shelter.id ? 'selected' : ''}`}
-                      onClick={() => setSelectedShelter(shelter)}
-                    >
-                      <div className="shelter-card-header">
-                        <h3>{shelter.name}</h3>
-                        <div
-                          className={`occupancy-badge ${getOccupancyStatusClass(shelter)}`}
-                        >
-                          {getOccupancyPercentage(shelter)}%
+                  {shelters.length === 0 ? (
+                    <p className="no-shelters-message">
+                      There are currently no shelters listed.
+                    </p>
+                  ) : (
+                    shelters.map((shelter) => (
+                      <div
+                        key={shelter.id}
+                        className={`shelter-card ${selectedShelter?.id === shelter.id ? 'selected' : ''}`}
+                        onClick={() => setSelectedShelter(shelter)}
+                      >
+                        <div className="shelter-card-header">
+                          <h3>{shelter.name}</h3>
+                          <div
+                            className={`occupancy-badge ${getOccupancyStatusClass(shelter)}`}
+                          >
+                            {getOccupancyPercentage(shelter)}%
+                          </div>
+                        </div>
+
+                        <p className="shelter-address">
+                          {shelter.addy}, {shelter.addy}
+                        </p>
+
+                        <div className="shelter-amenities">
+                          {shelter.amenities.map((amenity, index) => (
+                            <span key={index} className="amenity-tag">
+                              {amenity}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="shelter-footer">
+                          <span className="capacity-info">
+                            {shelter.occupancy}/{shelter.capacity} people
+                          </span>
+                          <span className="update-time">
+                            Updated {shelter.updated_at}
+                          </span>
                         </div>
                       </div>
-
-                      <p className="shelter-address">
-                        {shelter.addy}, {shelter.addy}
-                      </p>
-
-                      <div className="shelter-amenities">
-                        {shelter.amenities.map((amenity, index) => (
-                          <span key={index} className="amenity-tag">
-                            {amenity}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="shelter-footer">
-                        <span className="capacity-info">
-                          {shelter.occupancy}/{shelter.capacity} people
-                        </span>
-                        <span className="update-time">
-                          Updated {shelter.updated_at}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+                    ))
+                  )}
                 </div>
               )}
             </div>
