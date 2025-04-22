@@ -7,13 +7,18 @@ import {
 } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Network } from 'src/network'
-import type { IAlert, IShelter } from 'src/schemas'
+import type { IAlert, IPost, IPostCreate, IShelter } from 'src/schemas'
 
 export const AuthContext = createContext({
   user: null as IUser | null,
+  userError: null as string | null,
   isAuthenticated: null as boolean | null,
   alerts: [] as IAlert[],
   shelters: [] as IShelter[],
+  posts: [] as IPost[],
+  postsError: null as string | null,
+  updatePost: async (id: number, payload: Partial<IPost>) => {},
+  createPost: async (payload: IPostCreate): Promise<any> => {},
 })
 
 export const AuthProvider = (props: { children?: ReactNode }) => {
@@ -22,6 +27,10 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
   const [user, setUser] = useState<IUser | null>(null)
   const [alerts, setAlerts] = useState<IAlert[]>([])
   const [shelters, setShelters] = useState<IShelter[]>([])
+  const [posts, setPosts] = useState<IPost[]>([])
+
+  const [userError, setUserError] = useState<string | null>(null)
+  const [postsError, setPostsError] = useState<string | null>(null)
 
   const networkRef = useRef(Network.getInstance())
   const navigate = useNavigate()
@@ -39,7 +48,13 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
   const initializeStores = async () => {
     /* Get current user */
     const userRes = await networkRef.current.getCurrentUser()
-    if (userRes.success) setUser(userRes.data)
+    if (userRes.success) {
+      setUser(userRes.data)
+      setUserError(null)
+    } else {
+      console.log('user errors:', userRes.data)
+      setUserError(JSON.stringify(userRes.data))
+    }
 
     /* Get alerts */
     const alertsRes = await networkRef.current.getAlerts()
@@ -48,6 +63,10 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
     /* Get Shelters */
     const sheltersRes = await networkRef.current.getShelters()
     if (sheltersRes.success) setShelters(sheltersRes.data)
+
+    /* Get posts */
+    const postsRes = await networkRef.current.getPosts()
+    if (postsRes.success) setPosts(postsRes.data)
   }
 
   useEffect(() => {
@@ -76,8 +95,32 @@ export const AuthProvider = (props: { children?: ReactNode }) => {
     }
   }, [user])
 
+  const updatePost = async (id: number, payload: Partial<IPost>) => {}
+  const createPost = async (payload: IPostCreate) => {
+    const res = await networkRef.current.createPost(payload)
+    if (res.success) {
+      setPosts((prev) => [res.data, ...prev])
+      setPostsError(null)
+    } else {
+      setPostsError(JSON.stringify(res.data))
+    }
+    return res
+  }
+
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, alerts, shelters }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        userError,
+        isAuthenticated,
+        alerts,
+        shelters,
+        posts,
+        postsError,
+        updatePost,
+        createPost,
+      }}
+    >
       {props.children}
     </AuthContext.Provider>
   )

@@ -78,6 +78,11 @@ export const Login = () => {
     if (res.success) {
       navigate('/dashboard')
     } else {
+      if (res.data.nested) {
+        setErrors(res.data.errors)
+      } else {
+        setErrors({ all: res.data.error })
+      }
       console.warn('Unable to log in:', res.data)
     }
   }
@@ -136,6 +141,9 @@ export const Login = () => {
             >
               {isLoading ? 'Logging In...' : 'Log In'}
             </button>
+            <p className="error-message">
+              {errors.all || errors.detail || errors.non_field_errors}
+            </p>
 
             <div className="signup-link">
               Don't have an account? <Link to="/signup">Sign up</Link>
