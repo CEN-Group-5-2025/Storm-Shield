@@ -46,65 +46,6 @@ export const ShelterLocatorPage = () => {
     }
   }, [shelters]) // Dependency array includes shelters
 
-  // Mock shelter data
-  const mockShelters: any[] = [
-    {
-      id: 1,
-      name: 'San Juan Community Center',
-      address: '123 Calle Principal',
-      city: 'San Juan',
-      capacity: 200,
-      occupancy: 75,
-      coordinates: [18.4655, -66.1057],
-      amenities: ['Food', 'Water', 'Medical', 'Power'],
-      lastUpdated: '10 minutes ago',
-    },
-    {
-      id: 2,
-      name: 'Ponce Emergency Shelter',
-      address: '456 Avenida Sur',
-      city: 'Ponce',
-      capacity: 150,
-      occupancy: 120,
-      coordinates: [18.0111, -66.6141],
-      amenities: ['Food', 'Water', 'Power'],
-      lastUpdated: '25 minutes ago',
-    },
-    {
-      id: 3,
-      name: 'Mayagüez High School',
-      address: '789 Calle Oeste',
-      city: 'Mayagüez',
-      capacity: 300,
-      occupancy: 98,
-      coordinates: [18.2011, -67.1397],
-      amenities: ['Food', 'Water', 'Medical', 'Power', 'Showers'],
-      lastUpdated: '1 hour ago',
-    },
-    {
-      id: 4,
-      name: 'Arecibo Convention Center',
-      address: '321 Avenida Norte',
-      city: 'Arecibo',
-      capacity: 250,
-      occupancy: 180,
-      coordinates: [18.4725, -66.7156],
-      amenities: ['Food', 'Water', 'Medical'],
-      lastUpdated: '45 minutes ago',
-    },
-    {
-      id: 5,
-      name: 'Fajardo Community Shelter',
-      address: '654 Calle Este',
-      city: 'Fajardo',
-      capacity: 120,
-      occupancy: 45,
-      coordinates: [18.3366, -65.6528],
-      amenities: ['Food', 'Water', 'Power'],
-      lastUpdated: '2 hours ago',
-    },
-  ]
-
   // Calculate occupancy percentage
   const getOccupancyPercentage = (shelter: IShelter) => {
     return Math.round((shelter.occupancy / shelter.capacity) * 100)
