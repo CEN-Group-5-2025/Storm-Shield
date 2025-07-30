@@ -1,4 +1,4 @@
-FROM python:3.12.5-slim-bullseye AS base
+FROM python:3.14.0rc1-slim-bullseye AS base
 
 LABEL maintainer="ikehunter.com"
 
